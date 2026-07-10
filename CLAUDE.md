@@ -4,20 +4,42 @@ Guidance for AI assistants (and humans) working in this repository.
 
 ## Current state of the repository
 
-This repository is a **freshly initialized scaffold**. As of the last update to
-this file, it contains only:
+The project is a **Node.js (CommonJS) integration with the YouTube Data and
+YouTube Analytics APIs**. Current layout:
 
 ```
 .
-├── README.md   # single-line title placeholder
-└── CLAUDE.md   # this file
+├── README.md             # single-line title placeholder
+├── CLAUDE.md             # this file
+├── package.json          # Node manifest; dependency: googleapis
+├── .gitignore            # excludes node_modules/, client_secret.json, token.json
+├── youtube-auth.js       # OAuth2 helpers (interactive CLI login + token-only loader)
+├── youtube-analytics.js  # CLI: one-time login + 28-day channel report
+└── .claude/skills/
+    ├── run-max-geld-generation/  # smoke.sh: launch CLI, verify auth error paths
+    └── produce-video/            # produce.sh: script text -> TTS audio, thumbnail,
+                                  # 16:9 video, 9:16 Short (ffmpeg + espeak-ng)
 ```
 
-There is **no application code, build system, dependency manifest, test suite,
-or CI configuration yet**. Do not assume any framework, language, or tooling is
-in place — none has been chosen. When you are asked to "run the build," "run the
-tests," or "follow existing conventions," first confirm those things exist; at
-present they do not.
+There is **no test suite, linting, or CI configuration yet**. A Next.js
+frontend is planned (see `getAuthedClientOrThrow` in `youtube-auth.js`) but not
+present.
+
+### Setup & credentials
+
+1. Create an OAuth client (type "Desktop app") in the Google Cloud Console and
+   save it as `client_secret.json` in the repo root.
+2. Run `node youtube-analytics.js` (or `npm run yt:login`) once in a terminal;
+   it prints an auth URL, asks for the code, and writes `token.json`.
+3. Server-side code (e.g. Next.js routes) must use `getAuthedClientOrThrow()`
+   from `youtube-auth.js` — it never prompts interactively.
+
+`client_secret.json` and `token.json` are **secrets** and are gitignored.
+Never commit them and never print their contents into logs or PRs.
+
+OAuth scopes are read-only: `yt-analytics.readonly` and `youtube.readonly`.
+Monetary metrics (e.g. `estimatedRevenue`) would additionally require the
+`yt-analytics-monetary.readonly` scope and a re-login.
 
 > **Important:** Keep this file honest. When real code, tooling, or conventions
 > are added, update the sections below to describe them. Do not document
@@ -26,10 +48,10 @@ present they do not.
 ## Project intent
 
 The name **"Max Geld Generation"** ("maximum money generation" in German)
-suggests the project is intended to grow into a finance/earnings-related
-application. This is inferred from the name only — the concrete scope, stack, and
-architecture have not yet been defined. Confirm the intended direction with the
-user before scaffolding a specific technology stack.
+points at an earnings/analytics application. The first concrete slice is a
+YouTube-channel analytics integration: authenticate once via OAuth on the CLI,
+then let application code (eventually a Next.js app) query the YouTube
+Analytics API with the stored token.
 
 ## Repository & branch conventions
 
@@ -44,16 +66,16 @@ Development workflow:
 3. Push with `git push -u origin <branch-name>`.
 4. Open a pull request only when explicitly requested.
 
-## Getting started (once a stack is chosen)
+## Commands
 
-When the project's technology is decided, this section should be filled in with
-the real commands. Until then, use it as a checklist of what to establish:
+- Install: `npm install`
+- One-time OAuth login + test report: `npm run yt:login`
 
-- [ ] Choose a language/runtime and add its manifest (e.g. `package.json`,
-      `pyproject.toml`, `go.mod`).
-- [ ] Define install / build / run / test commands and document them here.
-- [ ] Add linting/formatting configuration and document how to run it.
-- [ ] Add a CI workflow under `.github/workflows/`.
+Still to establish:
+
+- [ ] Test suite and test command.
+- [ ] Linting/formatting configuration.
+- [ ] CI workflow under `.github/workflows/`.
 - [ ] Expand `README.md` beyond the placeholder title.
 
 ## Conventions for AI assistants
