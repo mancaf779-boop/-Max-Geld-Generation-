@@ -1,0 +1,6 @@
+# Abhängigkeiten
+node_modules/
+
+# OAuth-Geheimnisse — dürfen NIE committet werden
+client_secret.json
+token.json
