@@ -7,3 +7,6 @@ token.json
 
 # Produktions-Artefakte (produce-video: wav/png/mp4)
 out/
+
+# Azure-Speech-Schlüssel (Secret)
+.azure-speech.env
