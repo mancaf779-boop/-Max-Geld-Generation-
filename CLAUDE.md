@@ -68,7 +68,7 @@ Analytics API with the stored token.
 
 ## Repository & branch conventions
 
-- Remote: `origin` → `https://github.com/mancaf779-boop/-Max-Geld-Generation-`
+- Remote: `origin` → `https://github.com/mancaf779-boop/Max-Geld-Generation`
 - Default branch: `main`
 - Active development branch: `claude/claude-md-docs-tpypde`
 
