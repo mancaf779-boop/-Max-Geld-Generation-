@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "description": "YouTube-Analytics-Anbindung (OAuth-Login + Reports)",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "yt:login": "node youtube-analytics.js"
   },

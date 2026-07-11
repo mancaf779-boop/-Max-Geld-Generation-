@@ -21,9 +21,13 @@ async function main() {
   }
   console.log(`Kanal: ${channel.snippet.title} (${channel.id})`);
 
-  // Letzte 28 Tage abfragen (Scope: yt-analytics.readonly — nicht-monetäre Metriken)
-  const end = new Date();
-  const start = new Date(end.getTime() - 28 * 24 * 60 * 60 * 1000);
+  // 28-Tage-Fenster abfragen (Scope: yt-analytics.readonly — nicht-monetäre
+  // Metriken). start/end sind bei YouTube Analytics BEIDE inklusiv, daher
+  // end - 27 Tage; das Fenster endet vorgestern, weil Analytics-Daten
+  // ~48 h nachlaufen.
+  const DAY = 24 * 60 * 60 * 1000;
+  const end = new Date(Date.now() - 2 * DAY);
+  const start = new Date(end.getTime() - 27 * DAY);
   const analytics = google.youtubeAnalytics({ version: "v2", auth });
   const res = await analytics.reports.query({
     ids: `channel==${channel.id}`,
@@ -34,11 +38,19 @@ async function main() {
 
   const headers = res.data.columnHeaders.map((h) => h.name);
   const row = (res.data.rows && res.data.rows[0]) || [];
-  console.log(`\nLetzte 28 Tage (${isoDate(start)} bis ${isoDate(end)}):`);
+  console.log(`\n28 Tage, ${isoDate(start)} bis ${isoDate(end)} (beide inklusive; Ende = heute − 2 Tage wegen Datenverzug):`);
   headers.forEach((name, i) => console.log(`  ${name}: ${row[i] ?? "—"}`));
 }
 
 main().catch((err) => {
-  console.error("Fehler:", err.message);
+  // Bei GaxiosError steckt die eigentliche API-Ursache in response.data.error;
+  // Non-Error-Rejections nicht als "undefined" verschlucken.
+  const apiErr = err && err.response && err.response.data && err.response.data.error;
+  const msg =
+    typeof apiErr === "string" ? apiErr
+    : apiErr && (apiErr.message || JSON.stringify(apiErr))
+    || (err && err.message)
+    || String(err);
+  console.error("Fehler:", msg);
   process.exit(1);
 });

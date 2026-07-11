@@ -11,8 +11,8 @@ YouTube Analytics APIs**. Current layout:
 .
 ├── README.md             # single-line title placeholder
 ├── CLAUDE.md             # this file
-├── package.json          # Node manifest; dependency: googleapis
-├── .gitignore            # excludes node_modules/, client_secret.json, token.json
+├── package.json          # Node manifest; dependency: googleapis; engines: node >= 18
+├── .gitignore            # excludes node_modules/, out/, client_secret.json, token.json
 ├── youtube-auth.js       # OAuth2 helpers (interactive CLI login + token-only loader)
 ├── youtube-analytics.js  # CLI: one-time login + 28-day channel report
 └── .claude/skills/
@@ -30,12 +30,22 @@ present.
 1. Create an OAuth client (type "Desktop app") in the Google Cloud Console and
    save it as `client_secret.json` in the repo root.
 2. Run `node youtube-analytics.js` (or `npm run yt:login`) once in a terminal;
-   it prints an auth URL, asks for the code, and writes `token.json`.
+   it prints an auth URL and starts a loopback server on an ephemeral
+   `127.0.0.1` port that catches Google's redirect automatically. If the
+   browser runs on another machine, paste the full redirect URL (or just the
+   `code=...` value) into the prompt instead. On success it writes
+   `token.json` (file mode 0600). Re-logins use `prompt=consent`, so a
+   `refresh_token` is always issued; token rotation is persisted back to
+   `token.json` automatically.
 3. Server-side code (e.g. Next.js routes) must use `getAuthedClientOrThrow()`
    from `youtube-auth.js` — it never prompts interactively.
 
 `client_secret.json` and `token.json` are **secrets** and are gitignored.
 Never commit them and never print their contents into logs or PRs.
+
+The report window is 28 days (start and end date are both inclusive in the
+YouTube Analytics API) ending two days ago, because Analytics data lags by
+roughly 48 hours.
 
 OAuth scopes are read-only: `yt-analytics.readonly` and `youtube.readonly`.
 Monetary metrics (e.g. `estimatedRevenue`) would additionally require the

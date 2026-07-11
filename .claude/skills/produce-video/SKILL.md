@@ -19,6 +19,9 @@ apt-get update -q && apt-get install -y -q ffmpeg espeak-ng
 (Ohne vorheriges `apt-get update` schlägt die Installation im Container mit
 404 auf mesa-/vaapi-Pakete fehl.)
 
+Außerdem wird `python3` benötigt (zeichenbasierter Titel-Umbruch via
+`textwrap`); im Container bereits vorhanden.
+
 ## Run (Agent-Pfad)
 
 1. Skript als UTF-8-Textdatei schreiben (fließender Sprechtext, keine
@@ -45,9 +48,15 @@ video.mp4 h264 1920×1080 + AAC, short.mp4 1080×1920, Laufzeit < 30 s gesamt.
 
 ## Gotchas
 
-- `drawtext` bricht Text **nicht** automatisch um — der Treiber faltet den
-  Titel deshalb mit `fold -w 20` auf Zeilen. Titel > ~40 Zeichen werden im
-  Thumbnail klein/unleserlich; kurz halten.
+- `drawtext` bricht Text **nicht** automatisch um — der Treiber bricht den
+  Titel deshalb zeichenbasiert mit `python3`/`textwrap` auf ~20 Zeichen/Zeile
+  um (`fold -w` zählt unter POSIX-Locale Bytes und zerschneidet Umlaute —
+  verifiziert mit „Vermögensverwaltung für Anfänger"). Titel > ~40 Zeichen
+  werden im Thumbnail klein/unleserlich; kurz halten.
+- Der Titel wird über eine mktemp-Titeldatei (fester, „harmloser" Pfad) in
+  den Filtergraph gereicht und mit `expansion=none` gerendert: Ausgabepfade
+  mit `:`/Leerzeichen und Titel mit wörtlichem `%{...}` funktionieren
+  (verifiziert). Bei Fehlabbrüchen räumt ein `trap` die Titeldatei weg.
 - Stimmen: `de` (Deutsch), `en` — `espeak-ng --voices` listet alle.
   espeak-ng klingt robotisch; für bessere Qualität später eine
   Cloud-TTS einsetzen (braucht API-Key, hier nicht verifiziert).

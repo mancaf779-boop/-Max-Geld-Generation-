@@ -4,3 +4,6 @@ node_modules/
 # OAuth-Geheimnisse — dürfen NIE committet werden
 client_secret.json
 token.json
+
+# Produktions-Artefakte (produce-video: wav/png/mp4)
+out/
