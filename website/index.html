@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Max Geld Generation — der YouTube-Kanal für Spartipps, Rücklagen und automatisierte Finanzen. Täglich neue Videos.">
+<title>Max Geld Generation — Kanal-Website</title>
+<style>
+  :root {
+    --bg: #0d1b2a;
+    --panel: #1b263b;
+    --panel-2: #22304a;
+    --ink: #f4f7fb;
+    --muted: #9fb0c8;
+    --accent: #e63946;
+    --accent-press: #c92d3a;
+    --gold: #f2b632;
+    --line: rgba(159, 176, 200, 0.18);
+    --shadow: 0 18px 40px rgba(2, 8, 18, 0.45);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f2f4f9;
+      --panel: #ffffff;
+      --panel-2: #e8edf5;
+      --ink: #101c2e;
+      --muted: #51617a;
+      --accent: #d92d3c;
+      --accent-press: #b8222f;
+      --gold: #b57e0a;
+      --line: rgba(16, 28, 46, 0.14);
+      --shadow: 0 14px 32px rgba(16, 28, 46, 0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1b2a; --panel: #1b263b; --panel-2: #22304a; --ink: #f4f7fb;
+    --muted: #9fb0c8; --accent: #e63946; --accent-press: #c92d3a;
+    --gold: #f2b632; --line: rgba(159,176,200,0.18);
+    --shadow: 0 18px 40px rgba(2, 8, 18, 0.45);
+  }
+  :root[data-theme="light"] {
+    --bg: #f2f4f9; --panel: #ffffff; --panel-2: #e8edf5; --ink: #101c2e;
+    --muted: #51617a; --accent: #d92d3c; --accent-press: #b8222f;
+    --gold: #b57e0a; --line: rgba(16,28,46,0.14);
+    --shadow: 0 14px 32px rgba(16, 28, 46, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  .display {
+    font-family: Impact, "Arial Black", "Franklin Gothic Medium", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.02;
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Header ---------- */
+  header {
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+  }
+  .nav {
+    display: flex; align-items: center; gap: 12px 20px;
+    flex-wrap: wrap;
+    padding: 14px 0;
+  }
+  .mark {
+    width: 40px; height: 40px; flex: none;
+    background: var(--accent);
+    color: #fff;
+    display: grid; place-items: center;
+    font-size: 15px;
+    border-radius: 6px;
+  }
+  .brand { font-size: 17px; letter-spacing: 0.04em; text-decoration: none; }
+  .nav-links { margin-left: auto; display: flex; gap: 22px; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 15px; }
+  .nav-links a:hover { color: var(--ink); }
+
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff !important;
+    text-decoration: none;
+    padding: 11px 22px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 15px;
+    border: 0;
+    transition: transform 0.12s ease, background 0.12s ease;
+  }
+  .btn:hover { background: var(--accent-press); transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink) !important;
+    border: 1px solid var(--line);
+  }
+  .btn-ghost:hover { background: var(--panel); }
+
+  /* ---------- Hero = ein riesiges Thumbnail ---------- */
+  .hero { padding: 72px 0 56px; }
+  .hero-card {
+    background:
+      radial-gradient(120% 140% at 85% -20%, rgba(230, 57, 70, 0.16), transparent 55%),
+      linear-gradient(160deg, #16243a, #0d1b2a);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: clamp(40px, 7vw, 88px) clamp(24px, 6vw, 72px);
+    color: #f4f7fb;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card::after {
+    content: "€";
+    position: absolute;
+    right: -0.08em; bottom: -0.35em;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: clamp(200px, 34vw, 420px);
+    color: rgba(230, 57, 70, 0.09);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0 0 18px;
+  }
+  :root[data-theme="light"] .hero-card .eyebrow,
+  .hero-card .eyebrow { color: #f2b632; }
+  h1 {
+    margin: 0 0 20px;
+    font-size: clamp(44px, 8.5vw, 96px);
+    text-wrap: balance;
+    color: #fff;
+    text-shadow:
+      3px 3px 0 #e63946, -3px -3px 0 #e63946,
+      3px -3px 0 #e63946, -3px 3px 0 #e63946,
+      6px 6px 0 rgba(2, 8, 18, 0.55);
+  }
+  .hero-sub {
+    max-width: 34em;
+    margin: 0 0 32px;
+    font-size: clamp(17px, 2vw, 20px);
+    color: #c6d2e4;
+  }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; position: relative; }
+  .hero-card .btn-ghost { color: #f4f7fb !important; border-color: rgba(159,176,200,0.35); }
+  .hero-card .btn-ghost:hover { background: rgba(159,176,200,0.12); }
+
+  /* ---------- Fakten + Fortschritt ---------- */
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    padding: 8px 0 64px;
+  }
+  .fact {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 24px;
+  }
+  .fact .label {
+    text-transform: uppercase; letter-spacing: 0.12em;
+    font-size: 12px; font-weight: 700; color: var(--muted);
+    margin: 0 0 8px;
+  }
+  .fact .value {
+    font-size: 30px;
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .fact .note { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+  .meter {
+    height: 8px; border-radius: 4px;
+    background: var(--panel-2);
+    margin-top: 14px;
+    overflow: hidden;
+  }
+  .meter > i {
+    display: block; height: 100%;
+    width: 4%; /* Abo-Stand: hier Prozentwert pflegen (aktuell/500) */
+    background: var(--gold);
+    border-radius: 4px;
+  }
+
+  /* ---------- Videos ---------- */
+  section { padding: 24px 0 64px; }
+  h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  .section-lede { color: var(--muted); margin: 0 0 32px; max-width: 40em; }
+  .videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .video-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .video-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .thumb {
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(160deg, #1b263b, #0d1b2a);
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    position: relative;
+  }
+  .thumb span {
+    font-family: Impact, "Arial Black", sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(24px, 3.2vw, 34px);
+    line-height: 1.05;
+    color: #fff;
+    text-align: center;
+    text-shadow:
+      2px 2px 0 #e63946, -2px -2px 0 #e63946,
+      2px -2px 0 #e63946, -2px 2px 0 #e63946;
+  }
+  .badge {
+    position: absolute; right: 10px; bottom: 10px;
+    background: rgba(2, 8, 18, 0.8);
+    color: #fff;
+    font-size: 12px; font-weight: 700;
+    padding: 3px 8px; border-radius: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+  .video-meta { padding: 16px 18px 18px; }
+  .video-meta h3 { margin: 0 0 6px; font-size: 17px; }
+  .video-meta p { margin: 0; color: var(--muted); font-size: 14px; }
+
+  /* ---------- Über den Kanal ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .about-grid p { max-width: 62ch; }
+  .themen { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+  .themen li {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+  .themen b { display: block; margin-bottom: 2px; }
+  .themen span { color: var(--muted); }
+  @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- Abo-Band ---------- */
+  .cta-band {
+    background: var(--accent);
+    border-radius: 14px;
+    padding: clamp(36px, 6vw, 56px);
+    text-align: center;
+    color: #fff;
+    margin-bottom: 72px;
+  }
+  .cta-band h2 { color: #fff; margin-bottom: 10px; }
+  .cta-band p { margin: 0 auto 26px; max-width: 36em; color: rgba(255,255,255,0.88); }
+  .cta-band .btn {
+    background: #fff; color: #c92d3a !important;
+  }
+  .cta-band .btn:hover { background: #ffe9eb; transform: translateY(-1px); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0 40px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .foot { display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-between; }
+  footer a { color: var(--muted); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn, .video-card { transition: none; }
+    .btn:hover, .video-card:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <span class="mark display">M€</span>
+    <a class="brand display" href="#top">Max Geld Generation</a>
+    <nav class="nav-links">
+      <a href="#videos">Videos</a>
+      <a href="#kanal">Der Kanal</a>
+      <a class="btn" href="https://www.youtube.com/@DEIN-KANALNAME?sub_confirmation=1">Abonnieren</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="hero">
+      <div class="hero-card">
+        <p class="eyebrow">Finanzen · Spartipps · Jeden Tag neu</p>
+        <h1 class="display">Mehr Geld am Ende des Monats</h1>
+        <p class="hero-sub">
+          Max Geld Generation zeigt dir in kurzen, klaren Videos, wie du im Alltag
+          sparst, Rücklagen aufbaust und deine Finanzen automatisierst —
+          ohne Fachchinesisch, ohne Blabla.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="https://www.youtube.com/@DEIN-KANALNAME?sub_confirmation=1">Auf YouTube abonnieren</a>
+          <a class="btn btn-ghost" href="#videos">Videos ansehen</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="fact">
+        <p class="label">Neue Inhalte</p>
+        <p class="value">Täglich</p>
+        <p class="note">1–2 Videos plus Shorts — kompakt und direkt umsetzbar.</p>
+      </div>
+      <div class="fact">
+        <p class="label">Format</p>
+        <p class="value">3–8 Min</p>
+        <p class="note">Ein Thema pro Video. Kein Füllmaterial.</p>
+      </div>
+      <div class="fact">
+        <p class="label">Community-Ziel</p>
+        <p class="value">500 Abos</p>
+        <p class="note">Hilf mit, die Marke zu knacken — jedes Abo zählt.</p>
+        <div class="meter" role="img" aria-label="Fortschritt zum Abo-Ziel"><i></i></div>
+      </div>
+    </div>
+
+    <section id="videos">
+      <h2 class="display">Neueste Videos</h2>
+      <p class="section-lede">
+        Direkt aus dem Kanal — jeden Tag kommt mindestens ein neues dazu.
+      </p>
+      <div class="videos">
+        <a class="video-card" href="https://www.youtube.com/@DEIN-KANALNAME/videos">
+          <div class="thumb"><span>5 Spartipps für jeden Monat</span><em class="badge">4:12</em></div>
+          <div class="video-meta">
+            <h3>5 Spartipps für jeden Monat</h3>
+            <p>Sparplan automatisieren, Abos ausmisten, die 24-Stunden-Regel &amp; mehr.</p>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/@DEIN-KANALNAME/videos">
+          <div class="thumb"><span>Mehr Rücklagen im Alltag</span><em class="badge">3:05</em></div>
+          <div class="video-meta">
+            <h3>Mehr Rücklagen im Alltag</h3>
+            <p>Drei Wege, wie ohne Verzicht jeden Monat etwas übrig bleibt.</p>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/@DEIN-KANALNAME/shorts">
+          <div class="thumb"><span>Der 1%-Trick</span><em class="badge">Short</em></div>
+          <div class="video-meta">
+            <h3>Der 1%-Trick (Short)</h3>
+            <p>Eine Mini-Gewohnheit, die deine Sparquote Monat für Monat erhöht.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="kanal">
+      <h2 class="display">Der Kanal</h2>
+      <div class="about-grid">
+        <div>
+          <p>
+            <strong>Max Geld Generation</strong> ist der Kanal für alle, die beim Thema
+            Geld nicht erst ein Studium brauchen wollen. Hier gibt es konkrete,
+            sofort umsetzbare Tipps rund ums Sparen, Haushalten und den Aufbau von
+            Rücklagen — erklärt in Alltagssprache und auf den Punkt.
+          </p>
+          <p>
+            Jedes Video behandelt genau ein Thema und endet mit einem klaren
+            nächsten Schritt. Keine Produktwerbung, keine leeren Versprechen:
+            Was hier gezeigt wird, kannst du noch am selben Tag ausprobieren.
+          </p>
+        </div>
+        <ul class="themen">
+          <li><b>Sparen im Alltag</b><span>Abos, Tarife, Spontankäufe — wo dein Geld wirklich versickert.</span></li>
+          <li><b>Rücklagen aufbauen</b><span>Notgroschen, Tagesgeld und feste Sparroutinen.</span></li>
+          <li><b>Finanzen automatisieren</b><span>Einmal einrichten, jeden Monat profitieren.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="cta-band">
+      <h2 class="display">Kein Video verpassen</h2>
+      <p>
+        Abonniere den Kanal und aktiviere die Glocke — täglich neue Tipps,
+        die dir bares Geld sparen.
+      </p>
+      <a class="btn" href="https://www.youtube.com/@DEIN-KANALNAME?sub_confirmation=1">Jetzt kostenlos abonnieren</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Max Geld Generation</span>
+    <span>
+      <a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a>
+    </span>
+  </div>
+</footer>
+</body>
+</html>

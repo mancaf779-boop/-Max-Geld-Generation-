@@ -13,12 +13,15 @@ YouTube Analytics APIs**. Current layout:
 ├── CLAUDE.md             # this file
 ├── package.json          # Node manifest; dependency: googleapis; engines: node >= 18
 ├── .gitignore            # excludes node_modules/, out/, client_secret.json, token.json
-├── youtube-auth.js       # OAuth2 helpers (interactive CLI login + token-only loader)
+├── youtube-auth.js       # OAuth2 helpers (loopback login + token-only loader)
 ├── youtube-analytics.js  # CLI: one-time login + 28-day channel report
+├── website/index.html    # channel landing page (self-contained; GoDaddy upload)
 └── .claude/skills/
     ├── run-max-geld-generation/  # smoke.sh: launch CLI, verify auth error paths
-    └── produce-video/            # produce.sh: script text -> TTS audio, thumbnail,
-                                  # 16:9 video, 9:16 Short (ffmpeg + espeak-ng)
+    ├── produce-video/            # produce.sh: script text -> TTS audio, thumbnail,
+    │                             # 16:9 video, 9:16 Short (ffmpeg + espeak-ng)
+    └── design-website/           # shot.mjs: brand tokens + responsive screenshot
+                                  # checks (playwright-core device emulation)
 ```
 
 There is **no test suite, linting, or CI configuration yet**. A Next.js
