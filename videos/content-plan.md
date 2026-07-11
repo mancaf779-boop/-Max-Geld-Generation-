@@ -1,46 +1,32 @@
-# Content-Plan — Max Geld Generation
+# Content-Plan — Kanal „Lokale Sichtbarkeit & Termine optimieren"
 
-Themen-Ideen für die nächsten Videos, aus kostenloser Web-/YouTube-Recherche
-(Juli 2026). Ziel: 500 Abos. Nische: Sparen & Alltagsfinanzen für Einsteiger.
+Nische: lokalen Unternehmen (Friseure, Praxen, Handwerker, Gastro, Studios…)
+helfen, bei Google gefunden zu werden und daraus mehr Termine/Kunden zu machen.
+Format: **Screencasts** (Bildschirm zeigen) — in dieser Nische das, was zieht.
 
-## Was in der Nische gerade funktioniert
+## Video-Fahrplan
 
-- **Einsteiger-Fokus schlägt Experten-Ton.** Die größten deutschen Kanäle
-  (Finanzfluss ~2,5 Mio., Finanztip) gewinnen mit „verständlich statt clever".
-  Genau unser Ansatz — dranbleiben.
-- **Konkrete Zahlen im Titel ziehen.** „Mit 100 € im Monat …", „Die besten
-  ETFs 2026" (500k+ Views). Zahl + Jahr + klares Versprechen.
-- **Kurz & mobil.** Shorts täglich, Hauptvideos knackig. Ein Thema pro Video.
-- **Schnell auf Trends reagieren** — wer am Tag 1 eines Themas postet, bekommt
-  mehr Reichweite als am Tag 5.
-
-## Nächste 10 Video-Ideen (Haupt + Short)
-
-| # | Hauptvideo-Titel | Short-Hook |
+| # | Thema | Status |
 |---|---|---|
-| 06 | Mit 100 € im Monat anfangen zu investieren (Einsteiger) | „So werden aus 100 €/Monat 20.000 €" |
-| 07 | ETF für Anfänger einfach erklärt (in 5 Minuten) | „Was ist ein ETF? In 30 Sekunden" |
-| 08 | Girokonto-Falle: diese Gebühren zahlst du umsonst | „Dieses Konto kostet dich 60 €/Jahr" |
-| 09 | Haushaltsbuch führen ohne App (die 3-Zettel-Methode) | „So siehst du, wohin dein Geld geht" |
-| 10 | Steuererklärung 2026: die 5 wichtigsten Posten | „Hol dir diese Steuer-Euros zurück" |
-| 11 | Schulden abbauen: die Schneeball-Methode | „Zahl den kleinsten Kredit zuerst — darum" |
-| 12 | Lebensmittel-Budget: 40 % sparen ohne Verzicht | „Diese 3 Einkaufs-Regeln sparen 40 %" |
-| 13 | Tagesgeld vs. Sparbuch: wo dein Notgroschen hingehört | „Sparbuch? Du verlierst Geld. Hier warum" |
-| 14 | Die 1.000-€-Challenge: in 6 Monaten zur ersten Rücklage | „So sparst du 1.000 € in 6 Monaten" |
-| 15 | Versicherungen: welche du wirklich brauchst (und welche nicht) | „Diese 3 Versicherungen reichen" |
+| 01 | Google-Unternehmensprofil optimieren (Schritt für Schritt) | Skript + Thumbnail fertig → aufnehmen |
+| 02 | 5 Fehler im Google-Eintrag, die dich Kunden kosten | geplant |
+| 03 | Mehr Google-Bewertungen bekommen (ohne zu betteln) | geplant |
+| 04 | Vom Google-Klick zum Termin: Buchungslink & Automatik | geplant |
+| 05 | Warum dein Konkurrent über dir steht (lokales SEO erklärt) | geplant |
+| 06 | Google-Beiträge & Fotos: die unterschätzten Hebel | geplant |
+
+## Warum diese Nische stark ist
+- Klarer Geschäftsnutzen → Zuschauer sind Unternehmer mit Budget.
+- Passt zum Namen „Max Geld Generation" (du hilfst Betrieben, Geld zu verdienen).
+- Screencasts + konkrete Schritt-für-Schritt-Anleitungen ranken gut.
 
 ## Titel-Formeln, die klicken
+- Ergebnis-Versprechen: „…ganz oben bei der lokalen Suche"
+- Fehler aufdecken: „5 Fehler, die dich Kunden kosten"
+- Konkurrenz/Neugier: „Warum dein Konkurrent über dir steht"
+- Wie-Anleitung: „…Schritt für Schritt"
 
-- **Zahl + Zeitraum:** „In 6 Monaten zur ersten Rücklage"
-- **Fehler aufdecken:** „Diese Gebühr zahlst du umsonst"
-- **Einfach-Versprechen:** „… einfach erklärt / in 5 Minuten"
-- **Kontrast:** „Tagesgeld vs. Sparbuch"
-
-## Quellen
-
-- geldz.de/youtuber-deutschland — Übersicht Finanz-YouTuber DE 2026
-- Finanzfluss & Finanztip (YouTube) — Format-/Themen-Benchmarks
-- shortgenius.com/blog/youtube-shorts-ideas — Shorts-Trend-Taktik
-
-> Wenn das vidIQ-Guthaben am 3. August zurückgesetzt ist, diese Liste mit
-> echten Suchvolumen-/Konkurrenzdaten gegenprüfen und priorisieren.
+## Hinweis
+Die früheren Spartipps-Pakete liegen unter
+`_archiv-off-niche-spartipps/` — andere Nische (Privatfinanzen), passen nicht
+zu diesem Kanal. Nicht hochladen; nur aufbewahrt.
