@@ -10,3 +10,6 @@ out/
 
 # Azure-Speech-Schlüssel (Secret)
 .azure-speech.env
+
+# vidIQ-Token (Secret)
+.vidiq.env
