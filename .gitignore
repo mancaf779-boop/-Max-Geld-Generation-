@@ -1,0 +1,18 @@
+# Abhängigkeiten
+node_modules/
+
+# OAuth-Geheimnisse — dürfen NIE committet werden
+client_secret.json
+token.json
+
+# Produktions-Artefakte (produce-video: wav/png/mp4)
+out/
+
+# Azure-Speech-Schlüssel (Secret)
+.azure-speech.env
+
+# vidIQ-Token (Secret)
+.vidiq.env
+
+# ElevenLabs-Schlüssel (Secret)
+.elevenlabs.env
