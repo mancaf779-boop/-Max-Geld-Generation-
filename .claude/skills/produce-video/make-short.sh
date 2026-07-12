@@ -22,12 +22,23 @@ TMP=$(mktemp -d /tmp/short.XXXXXX)
 trap 'rm -rf "$TMP"' EXIT
 
 # 1) Anfrage-JSON bauen (Skripttext sicher als JSON-String)
-MODEL="$MODEL" python3 - "$SCRIPT_FILE" "$TMP/req.json" <<'PY'
+# Stimm-Feintuning per Env übersteuerbar: sanfter = höhere stability,
+# schneller = speed > 1.0 (ElevenLabs erlaubt 0.7–1.2).
+MODEL="$MODEL" \
+STABILITY="${STABILITY:-0.6}" SIMILARITY="${SIMILARITY:-0.8}" \
+STYLE="${STYLE:-0.0}" SPEED="${SPEED:-1.1}" \
+python3 - "$SCRIPT_FILE" "$TMP/req.json" <<'PY'
 import json, os, sys
 text = open(sys.argv[1], encoding="utf-8").read().strip()
 json.dump({"text": text,
            "model_id": os.environ.get("MODEL", "eleven_multilingual_v2"),
-           "voice_settings": {"stability": 0.5, "similarity_boost": 0.75}},
+           "voice_settings": {
+               "stability": float(os.environ["STABILITY"]),
+               "similarity_boost": float(os.environ["SIMILARITY"]),
+               "style": float(os.environ["STYLE"]),
+               "use_speaker_boost": True,
+               "speed": float(os.environ["SPEED"]),
+           }},
           open(sys.argv[2], "w"))
 PY
 
