@@ -13,3 +13,6 @@ out/
 
 # vidIQ-Token (Secret)
 .vidiq.env
+
+# ElevenLabs-Schlüssel (Secret)
+.elevenlabs.env
