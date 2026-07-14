@@ -74,10 +74,20 @@ Analytics API with the stored token.
 
 Development workflow:
 
-1. Do work on the designated feature branch, not on `main`.
-2. Commit with clear, descriptive messages.
-3. Push with `git push -u origin <branch-name>`.
-4. Open a pull request only when explicitly requested.
+1. **Start every new change on a FRESH branch off `main`** — never reuse a
+   merged branch. Use the helper:
+
+   ```bash
+   scripts/new-branch.sh <branch-name>   # or no name -> claude/change-<date>
+   ```
+
+   It refuses to run on a dirty working tree, fetches `origin/main`, and
+   branches from it. (A merged pull request is finished; new work never stacks
+   on top of merged history.)
+2. Do work on that branch, not on `main`.
+3. Commit with clear, descriptive messages.
+4. Push with `git push -u origin <branch-name>`.
+5. Open a pull request only when explicitly requested.
 
 ## Commands
 
