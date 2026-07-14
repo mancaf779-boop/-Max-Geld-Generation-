@@ -30,5 +30,6 @@ ergänzt.
 | 03 | [Product Description Generator](prompts/03-product-description-generator.md) | Verkaufsstarke Produktbeschreibungen in zwei Versionen (Standard/SEO + Story) |
 | 04 | [Senior Data Analyst](prompts/04-senior-data-analyst.md) | Daten für Stakeholder aufbereiten: Kennzahlen, Trends, Ausreißer, Visualisierungen, Handlungsempfehlungen |
 | 05 | [Prompt Improver](prompts/05-prompt-improver.md) | Einen bestehenden Prompt diagnostizieren und deutlich verbessern (Meta-Prompt) |
+| 06 | [Personal Brand Statement Builder](prompts/06-personal-brand-statement.md) | Personal-Branding: Tagline, LinkedIn-Headline, Bios, Elevator-Pitch, About-Sektion |
 
 _(weitere Prompts folgen — Nutzer liefert sie nach und nach)_
