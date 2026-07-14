@@ -31,5 +31,6 @@ ergänzt.
 | 04 | [Senior Data Analyst](prompts/04-senior-data-analyst.md) | Daten für Stakeholder aufbereiten: Kennzahlen, Trends, Ausreißer, Visualisierungen, Handlungsempfehlungen |
 | 05 | [Prompt Improver](prompts/05-prompt-improver.md) | Einen bestehenden Prompt diagnostizieren und deutlich verbessern (Meta-Prompt) |
 | 06 | [Personal Brand Statement Builder](prompts/06-personal-brand-statement.md) | Personal-Branding: Tagline, LinkedIn-Headline, Bios, Elevator-Pitch, About-Sektion |
+| 07 | [Expert Panel](prompts/07-expert-panel.md) | 4 gegensätzliche Experten-Perspektiven simulieren und zu einer Empfehlung synthetisieren |
 
 _(weitere Prompts folgen — Nutzer liefert sie nach und nach)_
