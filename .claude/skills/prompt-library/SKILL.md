@@ -38,5 +38,6 @@ ergänzt.
 | 11 | [Research Synthesizer](prompts/11-research-synthesizer.md) | Mehrere Quellen zusammenführen: Konsens, Widersprüche, Belege, Lücken, Fazit, Konfidenz |
 | 12 | [SEO Blog Post Writer](prompts/12-seo-blog-post-writer.md) | SEO-optimierter Blogartikel mit Struktur, FAQ, CTA, Meta-Description |
 | 13 | [Competitive Analysis Framework](prompts/13-competitive-analysis-framework.md) | Strukturierte Wettbewerbsanalyse: 6 Dimensionen, 2×2-Karte, Differenzierung, Empfehlungen |
+| 14 | [Decision Framework](prompts/14-decision-framework.md) | Entscheidungen strukturieren: Reframe, Pro/Contra, Reversibilität, 10/10/10, klare Empfehlung |
 
 _(weitere Prompts folgen — Nutzer liefert sie nach und nach)_
