@@ -1,14 +1,42 @@
 ---
 name: produce-video
-description: Create/produce a YouTube video, Short, thumbnail, and TTS audio from a German script text — generate video assets locally with espeak-ng + ffmpeg (no API keys needed).
+description: Create/produce a YouTube video, Short, thumbnail, and voiceover from a German script — three drivers: produce.sh (espeak, no key), make-short.sh (ElevenLabs voice, flat short), design_video.py (ElevenLabs + multi-scene designed short).
 ---
 
 # Video-Produktion: Skript → Audio + Thumbnail + Video + Short
 
-Erzeugt aus einer Skript-Textdatei lokal alle Upload-Artefakte für ein
-Video: TTS-Sprachspur, 1280×720-Thumbnail mit Titel, 1920×1080-Langform-Video
-(Standbild + Ton) und 1080×1920-Short (max. 60 s). Keine API-Keys nötig.
-**Alle Pfade relativ zum Repo-Root.**
+Drei Treiber, je nach gewünschter Qualität (alle Pfade relativ zum Repo-Root):
+
+| Treiber | Stimme | Output | Key nötig |
+|---|---|---|---|
+| `produce.sh` | espeak-ng (robotisch) | Thumbnail + 16:9-Video + 9:16-Short | nein |
+| `make-short.sh` | ElevenLabs | 1 flacher 9:16-Short (Titelkarte) | `.elevenlabs.env` |
+| `design_video.py` | ElevenLabs | **aufwändiger** 9:16-Short: designte Szene pro Satz, Verlauf, Zoom, Fortschrittsbalken | `.elevenlabs.env` |
+
+**`produce.sh`** erzeugt lokal ohne API-Key: TTS-Sprachspur, 1280×720-Thumbnail,
+1920×1080-Langform-Video (Standbild + Ton) und 1080×1920-Short.
+
+## ElevenLabs-Treiber (bessere Stimme)
+
+Schlüssel gehört gitignoriert in `.elevenlabs.env` (`ELEVENLABS_API_KEY=...`).
+Der Schlüssel braucht die Berechtigung **Text to Speech**; für eigene/geklonte
+Stimmen zusätzlich **Voices Read**. Regler per Env: `SPEED` (1.1), `STABILITY`
+(0.6), `SIMILARITY` (0.8). Voreingestellte Stimme: George
+(`JBFqnCBsd6RMkjVDRZzb`, mehrsprachig); als 4. Argument eine andere voice_id.
+
+```bash
+# Flacher Short (Titelkarte + Stimme) — verifiziert:
+SPEED=1.12 .claude/skills/produce-video/make-short.sh out/s.mp4 "Titel" skript.txt
+
+# Aufwändiger, mehrszeniger Short (je Satz eine designte Szene) — verifiziert:
+SPEED=1.12 python3 .claude/skills/produce-video/design_video.py out/s.mp4 "Kicker" skript.txt
+```
+
+`design_video.py` splittet das Skript in Sätze, erzeugt pro Satz eine
+ElevenLabs-Spur (exakte Synchronität), rendert je Satz eine gestaltete
+HTML-Szene (1080×1920) via Headless-Chromium (`/opt/pw-browsers/chromium`) und
+setzt alles mit sanftem Zoom + Einblendung per ffmpeg zusammen. Referenzlauf:
+6-Satz-Skript → 6 Szenen, ~20 s, h264 1080×1920 + AAC.
 
 ## Voraussetzungen
 
