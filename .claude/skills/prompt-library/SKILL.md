@@ -33,5 +33,6 @@ ergänzt.
 | 06 | [Personal Brand Statement Builder](prompts/06-personal-brand-statement.md) | Personal-Branding: Tagline, LinkedIn-Headline, Bios, Elevator-Pitch, About-Sektion |
 | 07 | [Expert Panel](prompts/07-expert-panel.md) | 4 gegensätzliche Experten-Perspektiven simulieren und zu einer Empfehlung synthetisieren |
 | 08 | [Brainstorming Machine](prompts/08-brainstorming-machine.md) | Ideen in drei Stufen (solide → Twists → Wildcards) generieren, Top 2 empfehlen |
+| 09 | [Landing Page Copywriter](prompts/09-landing-page-copywriter.md) | Conversion-Landingpage-Text: Hero, Benefit-Blöcke, Social Proof, FAQ, CTA |
 
 _(weitere Prompts folgen — Nutzer liefert sie nach und nach)_
