@@ -11,10 +11,23 @@ Drei Treiber, je nach gewünschter Qualität (alle Pfade relativ zum Repo-Root):
 |---|---|---|---|
 | `produce.sh` | espeak-ng (robotisch) | Thumbnail + 16:9-Video + 9:16-Short | nein |
 | `make-short.sh` | ElevenLabs | 1 flacher 9:16-Short (Titelkarte) | `.elevenlabs.env` |
-| `design_video.py` | ElevenLabs | **aufwändiger** 9:16-Short: designte Szene pro Satz, Verlauf, Zoom, Fortschrittsbalken | `.elevenlabs.env` |
+| `design_video.py` | ElevenLabs **oder edge-tts (gratis)** | **aufwändiger** 9:16-Short/Video: designte Szene pro Satz, Motiv, Glas-Karte, Zoom, Fortschrittsbalken | key-frei mit edge-tts |
 
 **`produce.sh`** erzeugt lokal ohne API-Key: TTS-Sprachspur, 1280×720-Thumbnail,
 1920×1080-Langform-Video (Standbild + Ton) und 1080×1920-Short.
+
+### Voraussetzungen
+
+```bash
+apt-get update -q && apt-get install -y -q ffmpeg espeak-ng   # produce.sh
+pip install edge-tts                                          # gratis Neural-Stimme (design_video.py Standard)
+```
+
+`design_video.py` nutzt außerdem Chromium unter `/opt/pw-browsers/chromium`
+(im Container vorhanden) zum Rendern der Szenen. Standard-Stimme ist
+`de-DE-ConradNeural` (edge-tts, kostenlos, **kein Schlüssel/Limit**) — eine
+`…Neural`-Stimme als 4. Argument wählt edge-tts, eine ElevenLabs-`voice_id`
+wählt ElevenLabs (dann `.elevenlabs.env` nötig).
 
 ## ElevenLabs-Treiber (bessere Stimme)
 

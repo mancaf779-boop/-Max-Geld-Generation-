@@ -15,6 +15,11 @@ VOICE=${4:-JBFqnCBsd6RMkjVDRZzb}   # Default: George (mehrsprachig, ruhig)
 MODEL=${ELEVEN_MODEL:-eleven_multilingual_v2}
 FONT=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
 
+if [ ! -f "$ROOT/.elevenlabs.env" ]; then
+  echo "FEHLER: $ROOT/.elevenlabs.env fehlt (ELEVENLABS_API_KEY=…)." >&2
+  echo "Tipp: Für eine kostenlose Stimme ohne Key stattdessen design_video.py mit einer edge-tts-Stimme (z. B. de-DE-ConradNeural) nutzen." >&2
+  exit 1
+fi
 # shellcheck disable=SC1090
 . "$ROOT/.elevenlabs.env"
 
