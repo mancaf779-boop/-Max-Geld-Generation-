@@ -36,5 +36,6 @@ ergänzt.
 | 09 | [Landing Page Copywriter](prompts/09-landing-page-copywriter.md) | Conversion-Landingpage-Text: Hero, Benefit-Blöcke, Social Proof, FAQ, CTA |
 | 10 | [LinkedIn Post Writer](prompts/10-linkedin-post-writer.md) | Engagement-starke LinkedIn-Posts in 3 Hook-Varianten (Frage/Bold/Story) |
 | 11 | [Research Synthesizer](prompts/11-research-synthesizer.md) | Mehrere Quellen zusammenführen: Konsens, Widersprüche, Belege, Lücken, Fazit, Konfidenz |
+| 12 | [SEO Blog Post Writer](prompts/12-seo-blog-post-writer.md) | SEO-optimierter Blogartikel mit Struktur, FAQ, CTA, Meta-Description |
 
 _(weitere Prompts folgen — Nutzer liefert sie nach und nach)_
