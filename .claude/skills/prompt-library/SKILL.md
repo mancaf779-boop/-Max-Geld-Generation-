@@ -29,5 +29,6 @@ ergänzt.
 | 02 | [System Prompt Builder](prompts/02-system-prompt-builder.md) | Produktionsreifen Claude-System-Prompt (Persona, Guardrails, Beispiele) für einen Assistenten schreiben |
 | 03 | [Product Description Generator](prompts/03-product-description-generator.md) | Verkaufsstarke Produktbeschreibungen in zwei Versionen (Standard/SEO + Story) |
 | 04 | [Senior Data Analyst](prompts/04-senior-data-analyst.md) | Daten für Stakeholder aufbereiten: Kennzahlen, Trends, Ausreißer, Visualisierungen, Handlungsempfehlungen |
+| 05 | [Prompt Improver](prompts/05-prompt-improver.md) | Einen bestehenden Prompt diagnostizieren und deutlich verbessern (Meta-Prompt) |
 
 _(weitere Prompts folgen — Nutzer liefert sie nach und nach)_
