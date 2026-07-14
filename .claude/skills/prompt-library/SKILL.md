@@ -37,5 +37,6 @@ ergänzt.
 | 10 | [LinkedIn Post Writer](prompts/10-linkedin-post-writer.md) | Engagement-starke LinkedIn-Posts in 3 Hook-Varianten (Frage/Bold/Story) |
 | 11 | [Research Synthesizer](prompts/11-research-synthesizer.md) | Mehrere Quellen zusammenführen: Konsens, Widersprüche, Belege, Lücken, Fazit, Konfidenz |
 | 12 | [SEO Blog Post Writer](prompts/12-seo-blog-post-writer.md) | SEO-optimierter Blogartikel mit Struktur, FAQ, CTA, Meta-Description |
+| 13 | [Competitive Analysis Framework](prompts/13-competitive-analysis-framework.md) | Strukturierte Wettbewerbsanalyse: 6 Dimensionen, 2×2-Karte, Differenzierung, Empfehlungen |
 
 _(weitere Prompts folgen — Nutzer liefert sie nach und nach)_
