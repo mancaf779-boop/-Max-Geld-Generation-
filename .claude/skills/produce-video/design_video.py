@@ -35,6 +35,14 @@ def load_key():
     sys.exit(".elevenlabs.env: ELEVENLABS_API_KEY fehlt")
 
 def tts(text, voice, key, out_mp3):
+    # Stimmen mit "Neural" im Namen -> edge-tts (Microsoft, gratis, kein Limit);
+    # sonst ElevenLabs (voice_id). certifi-Bündel muss die Proxy-CA enthalten.
+    if "Neural" in voice:
+        rate = os.environ.get("EDGE_RATE", "+8%")
+        subprocess.run(["python3", "-m", "edge_tts", "--voice", voice,
+            "--rate", rate, "--text", text, "--write-media", out_mp3],
+            check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        return
     body = json.dumps({
         "text": text, "model_id": "eleven_multilingual_v2",
         "voice_settings": {
@@ -131,11 +139,12 @@ def make_clip(png, out_mp4, mp3=None, secs=None):
 
 def main():
     out, kicker, script_file = sys.argv[1], sys.argv[2], sys.argv[3]
-    voice = sys.argv[4] if len(sys.argv) > 4 else "JBFqnCBsd6RMkjVDRZzb"
+    voice = sys.argv[4] if len(sys.argv) > 4 else "de-DE-ConradNeural"
     motif = sys.argv[5] if len(sys.argv) > 5 else "pin"
     silent = os.environ.get("SILENT") == "1"
     secs = float(os.environ.get("SCENE_SECS", "3.2"))
-    key = None if silent else load_key()
+    # ElevenLabs-Key nur nötig, wenn keine Neural-Stimme (edge-tts) genutzt wird
+    key = None if (silent or "Neural" in voice) else load_key()
     text = open(script_file, encoding="utf-8").read().strip()
     segs = [s.strip() for s in re.split(r'(?<=[.!?])\s+', text) if s.strip()]
     tmp = tempfile.mkdtemp(prefix="design_")
