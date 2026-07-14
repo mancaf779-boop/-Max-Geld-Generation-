@@ -34,5 +34,6 @@ ergänzt.
 | 07 | [Expert Panel](prompts/07-expert-panel.md) | 4 gegensätzliche Experten-Perspektiven simulieren und zu einer Empfehlung synthetisieren |
 | 08 | [Brainstorming Machine](prompts/08-brainstorming-machine.md) | Ideen in drei Stufen (solide → Twists → Wildcards) generieren, Top 2 empfehlen |
 | 09 | [Landing Page Copywriter](prompts/09-landing-page-copywriter.md) | Conversion-Landingpage-Text: Hero, Benefit-Blöcke, Social Proof, FAQ, CTA |
+| 10 | [LinkedIn Post Writer](prompts/10-linkedin-post-writer.md) | Engagement-starke LinkedIn-Posts in 3 Hook-Varianten (Frage/Bold/Story) |
 
 _(weitere Prompts folgen — Nutzer liefert sie nach und nach)_
