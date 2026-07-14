@@ -26,5 +26,6 @@ ergänzt.
 | # | Prompt | Zweck |
 |---|--------|-------|
 | 01 | [Universal Expert Role ("Act As")](prompts/01-act-as-expert.md) | In eine konkrete Expertenrolle schlüpfen; direkte, ehrliche Beratung mit konkreten nächsten Schritten |
+| 02 | [System Prompt Builder](prompts/02-system-prompt-builder.md) | Produktionsreifen Claude-System-Prompt (Persona, Guardrails, Beispiele) für einen Assistenten schreiben |
 
 _(weitere Prompts folgen — Nutzer liefert sie nach und nach)_
