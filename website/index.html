@@ -3,427 +3,373 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Max Geld Generation — der YouTube-Kanal für Spartipps, Rücklagen und automatisierte Finanzen. Täglich neue Videos.">
-<title>Max Geld Generation — Kanal-Website</title>
+<meta name="description" content="Der YouTube-Kanal, der lokalen Unternehmen zeigt, wie sie bei Google ganz oben erscheinen und daraus mehr Termine machen — Google-Unternehmensprofil, Bewertungen, lokales SEO.">
+<title>Lokale Sichtbarkeit &amp; Termine — YouTube-Kanal</title>
 <style>
   :root {
     --bg: #0d1b2a;
-    --panel: #1b263b;
-    --panel-2: #22304a;
+    --bg-2: #0a1522;
+    --panel: #16243a;
+    --panel-2: #1e2f49;
     --ink: #f4f7fb;
     --muted: #9fb0c8;
+    --line: rgba(159,176,200,.16);
     --accent: #e63946;
     --accent-press: #c92d3a;
     --gold: #f2b632;
-    --line: rgba(159, 176, 200, 0.18);
-    --shadow: 0 18px 40px rgba(2, 8, 18, 0.45);
+    --good: #37c98b;
+    --shadow: 0 22px 60px rgba(2,8,18,.5);
+    --radius: 14px;
   }
   @media (prefers-color-scheme: light) {
     :root {
-      --bg: #f2f4f9;
-      --panel: #ffffff;
-      --panel-2: #e8edf5;
-      --ink: #101c2e;
-      --muted: #51617a;
-      --accent: #d92d3c;
-      --accent-press: #b8222f;
-      --gold: #b57e0a;
-      --line: rgba(16, 28, 46, 0.14);
-      --shadow: 0 14px 32px rgba(16, 28, 46, 0.12);
+      --bg: #eef1f7; --bg-2: #e4e9f2; --panel: #ffffff; --panel-2: #f1f4fa;
+      --ink: #101c2e; --muted: #56657e; --line: rgba(16,28,46,.12);
+      --accent: #d92d3c; --accent-press: #b8222f; --gold: #b57e0a; --good: #14915f;
+      --shadow: 0 18px 44px rgba(16,28,46,.14);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0d1b2a; --panel: #1b263b; --panel-2: #22304a; --ink: #f4f7fb;
-    --muted: #9fb0c8; --accent: #e63946; --accent-press: #c92d3a;
-    --gold: #f2b632; --line: rgba(159,176,200,0.18);
-    --shadow: 0 18px 40px rgba(2, 8, 18, 0.45);
+    --bg:#0d1b2a;--bg-2:#0a1522;--panel:#16243a;--panel-2:#1e2f49;--ink:#f4f7fb;--muted:#9fb0c8;
+    --line:rgba(159,176,200,.16);--accent:#e63946;--accent-press:#c92d3a;--gold:#f2b632;--good:#37c98b;
+    --shadow:0 22px 60px rgba(2,8,18,.5);
   }
   :root[data-theme="light"] {
-    --bg: #f2f4f9; --panel: #ffffff; --panel-2: #e8edf5; --ink: #101c2e;
-    --muted: #51617a; --accent: #d92d3c; --accent-press: #b8222f;
-    --gold: #b57e0a; --line: rgba(16,28,46,0.14);
-    --shadow: 0 14px 32px rgba(16, 28, 46, 0.12);
+    --bg:#eef1f7;--bg-2:#e4e9f2;--panel:#ffffff;--panel-2:#f1f4fa;--ink:#101c2e;--muted:#56657e;
+    --line:rgba(16,28,46,.12);--accent:#d92d3c;--accent-press:#b8222f;--gold:#b57e0a;--good:#14915f;
+    --shadow:0 18px 44px rgba(16,28,46,.14);
   }
 
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body {
     margin: 0;
-    background: var(--bg);
+    background:
+      radial-gradient(80% 50% at 88% -5%, rgba(230,57,70,.14), transparent 60%),
+      radial-gradient(60% 40% at 5% 100%, rgba(242,182,50,.10), transparent 55%),
+      linear-gradient(180deg, var(--bg), var(--bg-2));
+    background-attachment: fixed;
     color: var(--ink);
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
     font-size: 17px;
+    -webkit-font-smoothing: antialiased;
   }
   .display {
-    font-family: Impact, "Arial Black", "Franklin Gothic Medium", sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    line-height: 1.02;
+    font-family: "Arial Black", "Franklin Gothic Heavy", Impact, sans-serif;
+    font-weight: 900; letter-spacing: -.01em; line-height: 1.02;
+  }
+  .eyebrow {
+    text-transform: uppercase; letter-spacing: .22em; font-size: 12.5px;
+    font-weight: 800; color: var(--gold); margin: 0;
   }
   a { color: inherit; }
-  a:focus-visible, button:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
-  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: var(--accent); color: #fff !important; text-decoration: none;
+    padding: 13px 24px; border-radius: 10px; font-weight: 800; font-size: 15.5px;
+    border: 0; cursor: pointer; transition: transform .12s ease, background .12s ease;
+  }
+  .btn:hover { background: var(--accent-press); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--ink) !important; border: 1px solid var(--line); }
+  .btn-ghost:hover { background: var(--panel); }
+  @media (prefers-reduced-motion: reduce) { .btn:hover { transform: none; } }
 
   /* ---------- Header ---------- */
   header {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
-    position: sticky; top: 0; z-index: 10;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(8px);
   }
-  .nav {
-    display: flex; align-items: center; gap: 12px 20px;
-    flex-wrap: wrap;
-    padding: 14px 0;
+  .nav { display: flex; align-items: center; gap: 14px; padding: 13px 0; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; margin-right: auto; }
+  .brand .pin {
+    width: 38px; height: 38px; flex: none; border-radius: 11px;
+    background: linear-gradient(150deg, var(--accent), var(--accent-press));
+    display: grid; place-items: center; box-shadow: 0 8px 22px rgba(230,57,70,.4);
   }
-  .mark {
-    width: 40px; height: 40px; flex: none;
-    background: var(--accent);
-    color: #fff;
-    display: grid; place-items: center;
-    font-size: 15px;
-    border-radius: 6px;
-  }
-  .brand { font-size: 17px; letter-spacing: 0.04em; text-decoration: none; }
-  .nav-links { margin-left: auto; display: flex; gap: 22px; align-items: center; }
-  .nav-links a { text-decoration: none; color: var(--muted); font-size: 15px; }
-  .nav-links a:hover { color: var(--ink); }
+  .brand b { font-size: 15px; letter-spacing: .01em; }
+  .brand span { display: block; font-size: 11.5px; color: var(--muted); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 20px; align-items: center; }
+  .nav-links a.link { text-decoration: none; color: var(--muted); font-size: 14.5px; font-weight: 600; }
+  .nav-links a.link:hover { color: var(--ink); }
+  @media (max-width: 640px) { .nav-links a.link { display: none; } }
 
-  .btn {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff !important;
-    text-decoration: none;
-    padding: 11px 22px;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 15px;
-    border: 0;
-    transition: transform 0.12s ease, background 0.12s ease;
-  }
-  .btn:hover { background: var(--accent-press); transform: translateY(-1px); }
-  .btn-ghost {
-    background: transparent;
-    color: var(--ink) !important;
-    border: 1px solid var(--line);
-  }
-  .btn-ghost:hover { background: var(--panel); }
+  /* ---------- Hero ---------- */
+  .hero { padding: 60px 0 40px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; }
+  @media (max-width: 880px) { .hero { grid-template-columns: 1fr; padding-top: 40px; } }
+  h1 { margin: 16px 0 18px; font-size: clamp(38px, 6.4vw, 68px); text-wrap: balance; }
+  h1 .mark { color: var(--accent); }
+  .lead { font-size: clamp(17px, 2vw, 20px); color: var(--muted); max-width: 34em; margin: 0 0 28px; }
+  .hero-cta { display: flex; gap: 13px; flex-wrap: wrap; align-items: center; }
+  .hero-note { margin: 18px 0 0; font-size: 13.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; }
+  .hero-note svg { flex: none; margin-top: 3px; }
+  .hero-note b { color: var(--ink); }
 
-  /* ---------- Hero = ein riesiges Thumbnail ---------- */
-  .hero { padding: 72px 0 56px; }
-  .hero-card {
-    background:
-      radial-gradient(120% 140% at 85% -20%, rgba(230, 57, 70, 0.16), transparent 55%),
-      linear-gradient(160deg, #16243a, #0d1b2a);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    box-shadow: var(--shadow);
-    padding: clamp(40px, 7vw, 88px) clamp(24px, 6vw, 72px);
-    color: #f4f7fb;
-    position: relative;
-    overflow: hidden;
+  /* ---------- Google-Lokal-Ergebnis (Hero-Motiv) ---------- */
+  .serp {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    box-shadow: var(--shadow); overflow: hidden;
   }
-  .hero-card::after {
-    content: "€";
-    position: absolute;
-    right: -0.08em; bottom: -0.35em;
-    font-family: Impact, "Arial Black", sans-serif;
-    font-size: clamp(200px, 34vw, 420px);
-    color: rgba(230, 57, 70, 0.09);
-    line-height: 1;
-    pointer-events: none;
+  .serp-bar { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+  .serp-input {
+    flex: 1; background: var(--panel-2); border-radius: 999px; padding: 9px 15px;
+    font-size: 14px; color: var(--ink); display: flex; align-items: center; gap: 9px;
   }
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--gold);
-    margin: 0 0 18px;
+  .serp-input .cursor { width: 1.5px; height: 15px; background: var(--accent); display: inline-block; animation: blink 1.1s step-end infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .serp-input .cursor { animation: none; } }
+  .serp-map { height: 92px; background:
+      linear-gradient(0deg, rgba(0,0,0,.06), rgba(0,0,0,.06)),
+      repeating-linear-gradient(58deg, var(--panel-2) 0 22px, transparent 22px 24px),
+      repeating-linear-gradient(-32deg, var(--panel-2) 0 30px, transparent 30px 32px);
+    position: relative; border-bottom: 1px solid var(--line);
   }
-  :root[data-theme="light"] .hero-card .eyebrow,
-  .hero-card .eyebrow { color: #f2b632; }
-  h1 {
-    margin: 0 0 20px;
-    font-size: clamp(44px, 8.5vw, 96px);
-    text-wrap: balance;
-    color: #fff;
-    text-shadow:
-      3px 3px 0 #e63946, -3px -3px 0 #e63946,
-      3px -3px 0 #e63946, -3px 3px 0 #e63946,
-      6px 6px 0 rgba(2, 8, 18, 0.55);
+  .serp-map .drop { position: absolute; top: 22px; left: 50%; transform: translateX(-50%); }
+  .result { display: flex; gap: 13px; padding: 15px 16px; align-items: flex-start; position: relative; }
+  .result + .result { border-top: 1px solid var(--line); }
+  .result.you { background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%); }
+  .result .rank {
+    width: 26px; height: 26px; border-radius: 8px; flex: none; display: grid; place-items: center;
+    font-size: 13px; font-weight: 800; color: var(--muted); background: var(--panel-2);
   }
-  .hero-sub {
-    max-width: 34em;
-    margin: 0 0 32px;
-    font-size: clamp(17px, 2vw, 20px);
-    color: #c6d2e4;
-  }
-  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; position: relative; }
-  .hero-card .btn-ghost { color: #f4f7fb !important; border-color: rgba(159,176,200,0.35); }
-  .hero-card .btn-ghost:hover { background: rgba(159,176,200,0.12); }
+  .result.you .rank { background: var(--accent); color: #fff; }
+  .result .body { min-width: 0; flex: 1; }
+  .result .name { font-weight: 700; font-size: 15.5px; display: flex; align-items: center; gap: 8px; }
+  .badge-you { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: #fff; background: var(--accent); padding: 2px 7px; border-radius: 999px; }
+  .stars { color: var(--gold); font-size: 13px; letter-spacing: 1px; }
+  .result .meta { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .result .meta b { color: var(--good); font-weight: 700; }
+  .book { margin-left: auto; align-self: center; font-size: 12.5px; font-weight: 800; color: #fff; background: var(--good); padding: 7px 12px; border-radius: 8px; white-space: nowrap; }
+  .result:not(.you) .book { background: transparent; color: var(--muted); border: 1px solid var(--line); font-weight: 600; }
 
-  /* ---------- Fakten + Fortschritt ---------- */
-  .facts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-    padding: 8px 0 64px;
-  }
-  .fact {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 22px 24px;
-  }
-  .fact .label {
-    text-transform: uppercase; letter-spacing: 0.12em;
-    font-size: 12px; font-weight: 700; color: var(--muted);
-    margin: 0 0 8px;
-  }
-  .fact .value {
-    font-size: 30px;
-    margin: 0;
-    font-variant-numeric: tabular-nums;
-  }
-  .fact .note { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
-  .meter {
-    height: 8px; border-radius: 4px;
-    background: var(--panel-2);
-    margin-top: 14px;
-    overflow: hidden;
-  }
-  .meter > i {
-    display: block; height: 100%;
-    width: 4%; /* Abo-Stand: hier Prozentwert pflegen (aktuell/500) */
-    background: var(--gold);
-    border-radius: 4px;
-  }
+  /* ---------- Trust row ---------- */
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 8px 0 56px; }
+  @media (max-width: 720px) { .facts { grid-template-columns: 1fr; } }
+  .fact { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
+  .fact .n { font-family: "Arial Black", Impact, sans-serif; font-weight: 900; font-size: 30px; color: var(--gold); font-variant-numeric: tabular-nums; }
+  .fact .t { margin: 4px 0 0; color: var(--muted); font-size: 14.5px; }
 
-  /* ---------- Videos ---------- */
-  section { padding: 24px 0 64px; }
-  h2 {
-    font-size: clamp(28px, 4vw, 40px);
-    margin: 0 0 8px;
-    text-wrap: balance;
-  }
-  .section-lede { color: var(--muted); margin: 0 0 32px; max-width: 40em; }
-  .videos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-  }
-  .video-card {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    overflow: hidden;
-    text-decoration: none;
-    display: block;
-    transition: transform 0.12s ease, box-shadow 0.12s ease;
-  }
-  .video-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-  .thumb {
-    aspect-ratio: 16 / 9;
-    background: linear-gradient(160deg, #1b263b, #0d1b2a);
-    display: grid;
-    place-items: center;
-    padding: 16px;
-    position: relative;
-  }
-  .thumb span {
-    font-family: Impact, "Arial Black", sans-serif;
-    text-transform: uppercase;
-    font-size: clamp(24px, 3.2vw, 34px);
-    line-height: 1.05;
-    color: #fff;
-    text-align: center;
-    text-shadow:
-      2px 2px 0 #e63946, -2px -2px 0 #e63946,
-      2px -2px 0 #e63946, -2px 2px 0 #e63946;
-  }
-  .badge {
-    position: absolute; right: 10px; bottom: 10px;
-    background: rgba(2, 8, 18, 0.8);
-    color: #fff;
-    font-size: 12px; font-weight: 700;
-    padding: 3px 8px; border-radius: 4px;
-    font-variant-numeric: tabular-nums;
-  }
-  .video-meta { padding: 16px 18px 18px; }
-  .video-meta h3 { margin: 0 0 6px; font-size: 17px; }
-  .video-meta p { margin: 0; color: var(--muted); font-size: 14px; }
+  /* ---------- Sections ---------- */
+  section { padding: 20px 0 60px; }
+  .sec-head { max-width: 42em; margin-bottom: 30px; }
+  h2 { font-size: clamp(28px, 4.2vw, 40px); margin: 8px 0 10px; text-wrap: balance; }
+  .sec-head p { color: var(--muted); margin: 0; }
 
-  /* ---------- Über den Kanal ---------- */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 40px;
-    align-items: start;
+  .topics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .topics { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .topics { grid-template-columns: 1fr; } }
+  .topic {
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 22px; display: flex; flex-direction: column; gap: 12px; transition: transform .12s ease, box-shadow .12s ease;
   }
-  .about-grid p { max-width: 62ch; }
-  .themen { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
-  .themen li {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-left: 4px solid var(--accent);
-    border-radius: 8px;
-    padding: 14px 18px;
-    font-size: 15px;
-  }
-  .themen b { display: block; margin-bottom: 2px; }
-  .themen span { color: var(--muted); }
-  @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
+  .topic:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  @media (prefers-reduced-motion: reduce) { .topic:hover { transform: none; } }
+  .topic .ico { width: 46px; height: 46px; border-radius: 12px; background: var(--panel-2); display: grid; place-items: center; }
+  .topic h3 { margin: 0; font-size: 18px; }
+  .topic p { margin: 0; color: var(--muted); font-size: 14.5px; }
+  .topic .ep { margin-top: auto; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 
-  /* ---------- Abo-Band ---------- */
-  .cta-band {
-    background: var(--accent);
-    border-radius: 14px;
-    padding: clamp(36px, 6vw, 56px);
-    text-align: center;
-    color: #fff;
-    margin-bottom: 72px;
-  }
-  .cta-band h2 { color: #fff; margin-bottom: 10px; }
-  .cta-band p { margin: 0 auto 26px; max-width: 36em; color: rgba(255,255,255,0.88); }
-  .cta-band .btn {
-    background: #fff; color: #c92d3a !important;
-  }
-  .cta-band .btn:hover { background: #ffe9eb; transform: translateY(-1px); }
+  /* ---------- Steps ---------- */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 720px) { .steps { grid-template-columns: 1fr; } }
+  .step { position: relative; padding: 26px 22px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .step .num { font-family: "Arial Black", Impact, sans-serif; font-weight: 900; font-size: 34px; color: var(--accent); line-height: 1; }
+  .step h3 { margin: 10px 0 6px; font-size: 18px; }
+  .step p { margin: 0; color: var(--muted); font-size: 14.5px; }
 
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 28px 0 40px;
-    color: var(--muted);
-    font-size: 14px;
+  /* ---------- CTA band ---------- */
+  .cta {
+    margin: 8px 0 64px; border-radius: 18px; padding: clamp(34px, 6vw, 56px);
+    text-align: center; color: #fff; position: relative; overflow: hidden;
+    background: radial-gradient(120% 120% at 80% -20%, #ff5a67, var(--accent) 45%, var(--accent-press));
   }
-  .foot { display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-between; }
+  .cta h2 { color: #fff; margin: 0 0 10px; }
+  .cta p { color: rgba(255,255,255,.9); max-width: 34em; margin: 0 auto 26px; }
+  .cta .btn { background: #fff; color: var(--accent-press) !important; }
+  .cta .btn:hover { background: #ffe9eb; }
+  .cta .who { margin-top: 18px; font-size: 13px; color: rgba(255,255,255,.85); }
+
+  footer { border-top: 1px solid var(--line); padding: 26px 0 46px; color: var(--muted); font-size: 14px; }
+  .foot { display: flex; gap: 18px; justify-content: space-between; flex-wrap: wrap; align-items: center; }
   footer a { color: var(--muted); }
-
-  @media (prefers-reduced-motion: reduce) {
-    .btn, .video-card { transition: none; }
-    .btn:hover, .video-card:hover { transform: none; }
-  }
+  .toggle { background: var(--panel); border: 1px solid var(--line); color: var(--muted); border-radius: 9px; padding: 7px 11px; font-size: 13px; cursor: pointer; font-weight: 600; }
+  .toggle:hover { color: var(--ink); }
 </style>
 </head>
-<body>
+<body id="top">
+
 <header>
   <div class="wrap nav">
-    <span class="mark display">M€</span>
-    <a class="brand display" href="#top">Max Geld Generation</a>
+    <a class="brand" href="#top" aria-label="Startseite">
+      <span class="pin" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12A7 7 0 0 0 5 10c0 5.4 7 12 7 12z" fill="#fff"/><circle cx="12" cy="10" r="2.6" fill="#c92d3a"/></svg>
+      </span>
+      <span><b>Lokale Sichtbarkeit</b><span>&amp; Termine optimieren</span></span>
+    </a>
     <nav class="nav-links">
-      <a href="#videos">Videos</a>
-      <a href="#kanal">Der Kanal</a>
-      <a class="btn" href="https://www.youtube.com/@DEIN-KANALNAME?sub_confirmation=1">Abonnieren</a>
+      <a class="link" href="#themen">Themen</a>
+      <a class="link" href="#so">So funktioniert's</a>
+      <a class="btn" href="https://www.youtube.com/@DEIN-KANAL?sub_confirmation=1">Abonnieren</a>
     </nav>
   </div>
 </header>
 
-<main id="top">
+<main>
   <div class="wrap">
 
-    <div class="hero">
-      <div class="hero-card">
-        <p class="eyebrow">Finanzen · Spartipps · Jeden Tag neu</p>
-        <h1 class="display">Mehr Geld am Ende des Monats</h1>
-        <p class="hero-sub">
-          Max Geld Generation zeigt dir in kurzen, klaren Videos, wie du im Alltag
-          sparst, Rücklagen aufbaust und deine Finanzen automatisierst —
-          ohne Fachchinesisch, ohne Blabla.
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Google-Unternehmensprofil · Lokales SEO · Mehr Termine</p>
+        <h1 class="display">Bei Google <span class="mark">ganz oben</span> — und der Kalender füllt sich.</h1>
+        <p class="lead">
+          Der Kanal für lokale Unternehmen: Wie du im Google-Ranking deiner Stadt
+          nach vorne kommst, mehr Bewertungen bekommst und aus Klicks echte
+          Termine machst. Konkret, Schritt für Schritt, kein Fachchinesisch.
         </p>
         <div class="hero-cta">
-          <a class="btn" href="https://www.youtube.com/@DEIN-KANALNAME?sub_confirmation=1">Auf YouTube abonnieren</a>
-          <a class="btn btn-ghost" href="#videos">Videos ansehen</a>
+          <a class="btn" href="https://www.youtube.com/@DEIN-KANAL?sub_confirmation=1">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12a3 3 0 0 0-2.1-2.1C19 9.4 12 9.4 12 9.4s-7 0-8.9.5A3 3 0 0 0 1 12a31 31 0 0 0 0 5.7 3 3 0 0 0 2.1 2.1C5 20.3 12 20.3 12 20.3s7 0 8.9-.5A3 3 0 0 0 23 17.7 31 31 0 0 0 23 12z" fill="#fff"/><path d="M9.8 15.5V8.9l5.7 3.3z" fill="#c92d3a"/></svg>
+            Auf YouTube abonnieren
+          </a>
+          <a class="btn btn-ghost" href="#themen">Themen ansehen</a>
+        </div>
+        <p class="hero-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7L9 18l-5-5" fill="none" stroke="var(--good)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Für <b>Friseure, Praxen, Handwerker, Gastro &amp; Dienstleister</b> — jede Woche neu.</span>
+        </p>
+      </div>
+
+      <!-- Charakteristisches Motiv: das lokale Google-Ergebnis -->
+      <div class="serp" role="img" aria-label="Google-Suchergebnis: dein Betrieb steht mit 4,9 Sternen auf Platz 1 und bietet Terminbuchung an.">
+        <div class="serp-bar">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="var(--muted)" stroke-width="2.2"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="var(--muted)" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <div class="serp-input">friseur in deiner stadt<span class="cursor"></span></div>
+        </div>
+        <div class="serp-map" aria-hidden="true">
+          <span class="drop">
+            <svg width="34" height="34" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12A7 7 0 0 0 5 10c0 5.4 7 12 7 12z" fill="var(--accent)"/><circle cx="12" cy="10" r="2.6" fill="#fff"/></svg>
+          </span>
+        </div>
+        <div class="result you">
+          <span class="rank">1</span>
+          <div class="body">
+            <div class="name">Dein Betrieb <span class="badge-you">Das bist du</span></div>
+            <div><span class="stars">★★★★★</span> <span class="meta">4,9 · 214 Bewertungen · Geöffnet</span></div>
+            <div class="meta"><b>Heute noch 3 Termine frei</b></div>
+          </div>
+          <span class="book">Termin buchen</span>
+        </div>
+        <div class="result">
+          <span class="rank">2</span>
+          <div class="body">
+            <div class="name">Mitbewerber A</div>
+            <div><span class="stars">★★★★☆</span> <span class="meta">4,1 · 38 Bewertungen</span></div>
+          </div>
+          <span class="book">Website</span>
+        </div>
+        <div class="result">
+          <span class="rank">3</span>
+          <div class="body">
+            <div class="name">Mitbewerber B</div>
+            <div><span class="stars">★★★★☆</span> <span class="meta">3,8 · 12 Bewertungen</span></div>
+          </div>
+          <span class="book">Anrufen</span>
         </div>
       </div>
-    </div>
+    </section>
 
+    <!-- FACTS -->
     <div class="facts">
-      <div class="fact">
-        <p class="label">Neue Inhalte</p>
-        <p class="value">Täglich</p>
-        <p class="note">1–2 Videos plus Shorts — kompakt und direkt umsetzbar.</p>
-      </div>
-      <div class="fact">
-        <p class="label">Format</p>
-        <p class="value">3–8 Min</p>
-        <p class="note">Ein Thema pro Video. Kein Füllmaterial.</p>
-      </div>
-      <div class="fact">
-        <p class="label">Community-Ziel</p>
-        <p class="value">500 Abos</p>
-        <p class="note">Hilf mit, die Marke zu knacken — jedes Abo zählt.</p>
-        <div class="meter" role="img" aria-label="Fortschritt zum Abo-Ziel"><i></i></div>
-      </div>
+      <div class="fact"><div class="n">70 %</div><p class="t">der Klicks gehen an die Top-3 im lokalen Google-Ergebnis. Da wollen wir dich hinbringen.</p></div>
+      <div class="fact"><div class="n">10 Min</div><p class="t">reichen für die wichtigsten Hebel am Google-Profil — jedes Video zeigt genau einen.</p></div>
+      <div class="fact"><div class="n">0 €</div><p class="t">kostet dich die Umsetzung. Kein teures Tool, kein Agentur-Vertrag — nur dein Profil, richtig gemacht.</p></div>
     </div>
 
-    <section id="videos">
-      <h2 class="display">Neueste Videos</h2>
-      <p class="section-lede">
-        Direkt aus dem Kanal — jeden Tag kommt mindestens ein neues dazu.
-      </p>
-      <div class="videos">
-        <a class="video-card" href="https://www.youtube.com/@DEIN-KANALNAME/videos">
-          <div class="thumb"><span>5 Spartipps für jeden Monat</span><em class="badge">4:12</em></div>
-          <div class="video-meta">
-            <h3>5 Spartipps für jeden Monat</h3>
-            <p>Sparplan automatisieren, Abos ausmisten, die 24-Stunden-Regel &amp; mehr.</p>
-          </div>
-        </a>
-        <a class="video-card" href="https://www.youtube.com/@DEIN-KANALNAME/videos">
-          <div class="thumb"><span>Mehr Rücklagen im Alltag</span><em class="badge">3:05</em></div>
-          <div class="video-meta">
-            <h3>Mehr Rücklagen im Alltag</h3>
-            <p>Drei Wege, wie ohne Verzicht jeden Monat etwas übrig bleibt.</p>
-          </div>
-        </a>
-        <a class="video-card" href="https://www.youtube.com/@DEIN-KANALNAME/shorts">
-          <div class="thumb"><span>Der 1%-Trick</span><em class="badge">Short</em></div>
-          <div class="video-meta">
-            <h3>Der 1%-Trick (Short)</h3>
-            <p>Eine Mini-Gewohnheit, die deine Sparquote Monat für Monat erhöht.</p>
-          </div>
-        </a>
+    <!-- THEMEN -->
+    <section id="themen">
+      <div class="sec-head">
+        <p class="eyebrow">Was dich erwartet</p>
+        <h2 class="display">Die Themen des Kanals</h2>
+        <p>Jedes Video: ein Problem, eine Schritt-für-Schritt-Lösung, ein klarer nächster Schritt — direkt am Bildschirm gezeigt.</p>
+      </div>
+      <div class="topics">
+        <article class="topic">
+          <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12A7 7 0 0 0 5 10c0 5.4 7 12 7 12z" fill="var(--accent)"/><circle cx="12" cy="10" r="2.6" fill="var(--panel)"/></svg></span>
+          <h3>Google-Profil optimieren</h3>
+          <p>Schritt für Schritt zum Eintrag, der bei der lokalen Suche ganz oben steht.</p>
+          <span class="ep">Video 1</span>
+        </article>
+        <article class="topic">
+          <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="var(--gold)" stroke-width="2.2"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="var(--gold)" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+          <h3>5 Fehler im Google-Eintrag</h3>
+          <p>Die typischen Patzer, die dich jeden Monat Kunden kosten — und die Fixes.</p>
+          <span class="ep">Video 2</span>
+        </article>
+        <article class="topic">
+          <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 18l-6 3.4 1.4-6.8L2.3 9.9l6.9-.8z" fill="var(--gold)"/></svg></span>
+          <h3>Mehr Bewertungen</h3>
+          <p>Systematisch echte Google-Bewertungen sammeln — ohne zu betteln.</p>
+          <span class="ep">Video 3</span>
+        </article>
+        <article class="topic">
+          <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2.4" fill="var(--accent)"/><rect x="3" y="4.5" width="18" height="4.5" fill="var(--accent-press)"/><rect x="6.5" y="12" width="3" height="3" rx=".6" fill="#fff"/><rect x="14.5" y="12" width="3" height="3" rx=".6" fill="#fff"/></svg></span>
+          <h3>Aus Klick wird Termin</h3>
+          <p>Buchungslink &amp; Aktionsbutton, damit Kunden direkt aus Google buchen.</p>
+          <span class="ep">Video 4</span>
+        </article>
+        <article class="topic">
+          <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="4" y="12" width="3.6" height="8" rx="1" fill="var(--muted)"/><rect x="10.2" y="8" width="3.6" height="12" rx="1" fill="var(--gold)"/><rect x="16.4" y="4" width="3.6" height="16" rx="1" fill="var(--accent)"/></svg></span>
+          <h3>Lokales SEO erklärt</h3>
+          <p>Warum dein Konkurrent über dir steht — und wie du aufholst.</p>
+          <span class="ep">Video 5</span>
+        </article>
+        <article class="topic">
+          <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.4" fill="var(--accent)"/><path d="M8.5 7l1.5-2.2h4L15.5 7z" fill="var(--accent-press)"/><circle cx="12" cy="13.5" r="3.6" fill="var(--panel)"/><circle cx="12" cy="13.5" r="1.8" fill="#fff"/></svg></span>
+          <h3>Beiträge &amp; Fotos</h3>
+          <p>Die zwei unterschätzten Hebel, die dein Profil aktiv und sichtbar halten.</p>
+          <span class="ep">Video 6</span>
+        </article>
       </div>
     </section>
 
-    <section id="kanal">
-      <h2 class="display">Der Kanal</h2>
-      <div class="about-grid">
-        <div>
-          <p>
-            <strong>Max Geld Generation</strong> ist der Kanal für alle, die beim Thema
-            Geld nicht erst ein Studium brauchen wollen. Hier gibt es konkrete,
-            sofort umsetzbare Tipps rund ums Sparen, Haushalten und den Aufbau von
-            Rücklagen — erklärt in Alltagssprache und auf den Punkt.
-          </p>
-          <p>
-            Jedes Video behandelt genau ein Thema und endet mit einem klaren
-            nächsten Schritt. Keine Produktwerbung, keine leeren Versprechen:
-            Was hier gezeigt wird, kannst du noch am selben Tag ausprobieren.
-          </p>
+    <!-- SO FUNKTIONIERT'S -->
+    <section id="so">
+      <div class="sec-head">
+        <p class="eyebrow">So funktioniert's</p>
+        <h2 class="display">Von unsichtbar zu ausgebucht — in drei Schritten</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Gefunden werden</h3>
+          <p>Google-Profil richtig einrichten: Kategorie, Infos, Fotos. So tauchst du bei den Suchen deiner Stadt überhaupt erst auf.</p>
         </div>
-        <ul class="themen">
-          <li><b>Sparen im Alltag</b><span>Abos, Tarife, Spontankäufe — wo dein Geld wirklich versickert.</span></li>
-          <li><b>Rücklagen aufbauen</b><span>Notgroschen, Tagesgeld und feste Sparroutinen.</span></li>
-          <li><b>Finanzen automatisieren</b><span>Einmal einrichten, jeden Monat profitieren.</span></li>
-        </ul>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Vertrauen aufbauen</h3>
+          <p>Bewertungen sammeln und beantworten. Sterne sind das, was aus einem Sucher einen Interessenten macht.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Termine gewinnen</h3>
+          <p>Buchungsweg sichtbar machen, damit aus dem Klick ein echter Termin wird — rund um die Uhr, ohne Anruf.</p>
+        </div>
       </div>
     </section>
 
-    <div class="cta-band">
-      <h2 class="display">Kein Video verpassen</h2>
-      <p>
-        Abonniere den Kanal und aktiviere die Glocke — täglich neue Tipps,
-        die dir bares Geld sparen.
-      </p>
-      <a class="btn" href="https://www.youtube.com/@DEIN-KANALNAME?sub_confirmation=1">Jetzt kostenlos abonnieren</a>
+    <!-- CTA -->
+    <div class="cta">
+      <h2 class="display">Jede Woche ein Schritt näher an „ganz oben"</h2>
+      <p>Abonniere den Kanal und aktiviere die Glocke — dann verpasst du keinen Tipp, der dir Kunden bringt.</p>
+      <a class="btn" href="https://www.youtube.com/@DEIN-KANAL?sub_confirmation=1">Jetzt kostenlos abonnieren</a>
+      <p class="who">Für Inhaber:innen lokaler Betriebe, die selbst Hand anlegen wollen.</p>
     </div>
 
   </div>
@@ -431,11 +377,27 @@
 
 <footer>
   <div class="wrap foot">
-    <span>© 2026 Max Geld Generation</span>
+    <span>© <span id="y"></span> Lokale Sichtbarkeit &amp; Termine optimieren</span>
     <span>
       <a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a>
+      &nbsp;<button class="toggle" id="themeBtn" type="button" aria-label="Farbschema wechseln">Hell / Dunkel</button>
     </span>
   </div>
 </footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+  (function () {
+    var root = document.documentElement, btn = document.getElementById("themeBtn");
+    btn.addEventListener("click", function () {
+      var now = getComputedStyle(root).getPropertyValue("--bg").trim();
+      // aktuelle effektive Helligkeit grob bestimmen und umschalten
+      var isDark = root.getAttribute("data-theme")
+        ? root.getAttribute("data-theme") === "dark"
+        : matchMedia("(prefers-color-scheme: dark)").matches;
+      root.setAttribute("data-theme", isDark ? "light" : "dark");
+    });
+  })();
+</script>
 </body>
 </html>
