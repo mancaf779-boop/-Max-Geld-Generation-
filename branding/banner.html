@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:2048px;height:1152px;overflow:hidden;background:#0d1b2a;font-family:Arial,"DejaVu Sans",sans-serif}
+.stage{width:2048px;height:1152px;position:relative;
+  background:
+    radial-gradient(60% 90% at 84% 12%, rgba(230,57,70,.30), transparent 60%),
+    radial-gradient(50% 80% at 12% 96%, rgba(242,182,50,.16), transparent 58%),
+    linear-gradient(150deg,#1b2c46 0%,#0d1b2a 72%)}
+.grid{position:absolute;inset:0;opacity:.06;
+  background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);
+  background-size:120px 120px}
+/* dekorative Motive in den Außenbereichen (außerhalb der sicheren Zone) */
+.deco{position:absolute;opacity:.13}
+.d1{left:150px;top:210px}
+.d2{right:210px;top:170px}
+.d3{right:330px;bottom:150px}
+/* sichere Zone: mittige 1235x338 – alles Wichtige hier hinein */
+.safe{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:1235px;height:338px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.kick{color:#f2b632;font-weight:900;font-size:28px;letter-spacing:.28em;text-transform:uppercase}
+.title{font-family:"Arial Black",Impact,sans-serif;font-weight:900;color:#fff;font-size:94px;line-height:.94;
+  letter-spacing:-.01em;margin:12px 0 0;text-shadow:0 6px 30px rgba(0,0,0,.45)}
+.title .hl{color:#ff5a67}
+.sub{color:#c6d2e4;font-size:31px;margin-top:16px;font-weight:600}
+.pill{margin-top:18px;display:inline-flex;align-items:center;gap:12px;background:#e63946;color:#fff;
+  font-weight:900;font-size:26px;padding:12px 24px;border-radius:999px}
+</style></head><body>
+<div class="stage">
+  <div class="grid"></div>
+  <!-- Deko: Pins & Stern in den Rändern -->
+  <svg class="deco d1" width="260" height="260" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12A7 7 0 0 0 5 10c0 5.4 7 12 7 12z" fill="#e63946"/><circle cx="12" cy="10" r="2.6" fill="#0d1b2a"/></svg>
+  <svg class="deco d2" width="220" height="220" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 18l-6 3.4 1.4-6.8L2.3 9.9l6.9-.8z" fill="#f2b632"/></svg>
+  <svg class="deco d3" width="200" height="200" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12A7 7 0 0 0 5 10c0 5.4 7 12 7 12z" fill="#f2b632"/><circle cx="12" cy="10" r="2.6" fill="#0d1b2a"/></svg>
+
+  <div class="safe">
+    <div class="kick">Google-Profil · Lokales SEO · Mehr Termine</div>
+    <div class="title">Bei Google <span class="hl">ganz oben</span></div>
+    <div class="sub">Mehr Sichtbarkeit &amp; Termine für dein lokales Geschäft — jede Woche neu</div>
+    <div class="pill">▶ Jede Woche ein neuer Tipp</div>
+  </div>
+</div>
+</body></html>
