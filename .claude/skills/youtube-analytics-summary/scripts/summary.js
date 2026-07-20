@@ -31,7 +31,7 @@ async function main() {
 
   const yt = google.youtube({ version: "v3", auth });
   const ch = await yt.channels.list({ part: ["id", "snippet"], mine: true });
-  const channel = ch.data.items && ch.data.items[0];
+  const channel = ch.data?.items?.[0];
   if (!channel) {
     console.error("Kein Kanal für dieses Google-Konto gefunden.");
     process.exit(1);
@@ -51,8 +51,8 @@ async function main() {
     metrics: "views,estimatedMinutesWatched,averageViewDuration,subscribersGained",
   });
 
-  const headers = (res.data.columnHeaders || []).map((h) => h.name);
-  const row = (res.data.rows && res.data.rows[0]) || [];
+  const headers = (res.data?.columnHeaders || []).map((h) => h?.name);
+  const row = res.data?.rows?.[0] || [];
   const val = (name) => {
     const i = headers.indexOf(name);
     const n = i >= 0 ? Number(row[i]) : NaN;
@@ -68,7 +68,7 @@ async function main() {
 
   const line = "─".repeat(48);
   console.log(line);
-  console.log(`  ${channel.snippet.title}`);
+  console.log(`  ${channel.snippet?.title || channel.id}`);
   console.log(`  28 Tage · ${isoDate(start)} → ${isoDate(end)}`);
   console.log(line);
   console.log(`  Aufrufe             ${fmtInt(views)}  (Ø ${fmtInt(perDay)}/Tag)`);
