@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gratis Google-Profil-Audit · Lokale Sichtbarkeit &amp; Termine</title>
+<meta name="description" content="Kostenloser Check deines Google-Unternehmensprofils: Wo du bei der lokalen Suche Kunden verlierst — und die 3 konkreten Stellschrauben für mehr Termine. Unverbindlich, Ergebnis in 48 Stunden.">
+<style>
+  :root {
+    --bg:#0d1b2a; --bg-2:#0a1522; --panel:#16243a; --panel-2:#1e2f49;
+    --ink:#f4f7fb; --muted:#9fb0c8; --line:rgba(159,176,200,.16);
+    --accent:#e63946; --accent-press:#c92d3a; --gold:#f2b632; --good:#37c98b;
+  }
+  :root[data-theme="light"], html.light {
+    --bg:#eef1f7; --bg-2:#e4e9f2; --panel:#ffffff; --panel-2:#f1f4fa;
+    --ink:#101c2e; --muted:#56657e; --line:rgba(16,28,46,.12);
+    --accent:#d92d3c; --accent-press:#b8222f; --gold:#b57e0a; --good:#14915f;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg:#eef1f7; --bg-2:#e4e9f2; --panel:#ffffff; --panel-2:#f1f4fa;
+      --ink:#101c2e; --muted:#56657e; --line:rgba(16,28,46,.12);
+      --accent:#d92d3c; --accent-press:#b8222f; --gold:#b57e0a; --good:#14915f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1100px 520px at 88% -8%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%),
+      linear-gradient(180deg, var(--bg), var(--bg-2));
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display {
+    font-family: "Arial Black", "Franklin Gothic Heavy", Impact, sans-serif;
+    letter-spacing: -.01em; line-height: 1.02; margin: 0;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 22px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: var(--accent); color: #fff !important; text-decoration: none;
+    font-weight: 800; font-size: 16px; padding: 14px 24px; border-radius: 12px;
+    border: 0; cursor: pointer; transition: transform .12s ease, background .12s ease;
+  }
+  .btn:hover { background: var(--accent-press); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--ink) !important; border: 1px solid var(--line); }
+  .btn-ghost:hover { background: var(--panel); }
+
+  /* header */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    backdrop-filter: blur(9px);
+    background: color-mix(in srgb, var(--bg) 84%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+  .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+  .logo {
+    width: 34px; height: 34px; border-radius: 9px;
+    background: linear-gradient(150deg, var(--accent), var(--accent-press));
+    display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 17px;
+    font-family: "Arial Black", sans-serif;
+  }
+  .brand b { font-size: 15px; }
+  .brand span { display: block; font-size: 10.5px; color: var(--muted); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+
+  /* hero */
+  .hero { padding: 62px 0 46px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--good); margin-bottom: 18px;
+  }
+  .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--good); box-shadow: 0 0 0 4px color-mix(in srgb, var(--good) 22%, transparent); }
+  h1 { font-size: clamp(34px, 5.4vw, 56px); }
+  h1 .mark { color: var(--accent); }
+  .lead { font-size: clamp(16px, 2vw, 19px); color: var(--muted); max-width: 32em; margin: 20px 0 28px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .assure { margin-top: 18px; font-size: 13.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px; }
+  .assure b { color: var(--ink); }
+  .assure span { display: inline-flex; align-items: center; gap: 7px; }
+  .assure span::before { content: "✓"; color: var(--good); font-weight: 900; }
+
+  /* SERP mock card */
+  .serp {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    padding: 18px; box-shadow: 0 24px 60px rgba(0,0,0,.28);
+  }
+  .serp-top { display: flex; align-items: center; gap: 9px; background: var(--panel-2); border-radius: 999px; padding: 9px 14px; font-size: 13.5px; color: var(--muted); }
+  .serp-top .dot { color: var(--accent); font-weight: 900; }
+  .row { display: flex; gap: 12px; align-items: flex-start; padding: 14px 6px; border-bottom: 1px solid var(--line); }
+  .row:last-child { border-bottom: 0; }
+  .rank { width: 26px; height: 26px; flex: none; border-radius: 8px; background: var(--panel-2); display: grid; place-items: center; font-weight: 900; font-size: 13px; color: var(--muted); }
+  .row.you .rank { background: var(--accent); color: #fff; }
+  .rmeta b { font-size: 14.5px; }
+  .rmeta small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .stars { color: var(--gold); font-size: 12.5px; letter-spacing: 1px; }
+  .row.you { background: color-mix(in srgb, var(--accent) 9%, transparent); border-radius: 10px; }
+  .tagline { margin-top: 12px; text-align: center; font-size: 12.5px; color: var(--muted); }
+
+  /* sections */
+  section { padding: 46px 0; }
+  .sec-head { max-width: 30em; margin-bottom: 30px; }
+  .sec-head .kick { color: var(--gold); font-weight: 800; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+  .sec-head h2 { font-size: clamp(26px, 3.6vw, 36px); margin: 10px 0 0; }
+  .sec-head p { color: var(--muted); margin: 12px 0 0; }
+
+  .grid { display: grid; gap: 16px; }
+  .cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  .card .n { font-family: "Arial Black", sans-serif; color: var(--accent); font-size: 22px; }
+  .card h3 { font-size: 17px; margin: 10px 0 6px; }
+  .card p { color: var(--muted); font-size: 14.5px; margin: 0; }
+
+  .checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .checks li { display: flex; gap: 12px; align-items: flex-start; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 15px 17px; }
+  .checks .ic { flex: none; width: 26px; height: 26px; border-radius: 8px; background: color-mix(in srgb, var(--good) 18%, transparent); color: var(--good); display: grid; place-items: center; font-weight: 900; }
+  .checks b { font-size: 15px; }
+  .checks small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  /* form */
+  .form-sec { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: clamp(24px, 4vw, 44px); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field.full { grid-column: 1 / -1; }
+  label { font-size: 13.5px; font-weight: 700; }
+  label .req { color: var(--accent); }
+  input, select, textarea {
+    background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 13px; color: var(--ink); font: inherit; font-size: 15px;
+  }
+  input:focus, select:focus, textarea:focus { outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 1px; border-color: transparent; }
+  textarea { resize: vertical; min-height: 84px; }
+  .form-foot { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .form-note { font-size: 12.5px; color: var(--muted); }
+  .ok-msg { display: none; background: color-mix(in srgb, var(--good) 14%, transparent); border: 1px solid color-mix(in srgb, var(--good) 40%, transparent); color: var(--ink); border-radius: 12px; padding: 16px 18px; font-size: 14.5px; margin-top: 16px; }
+  .ok-msg.show { display: block; }
+  .placeholder { color: var(--accent); font-weight: 800; }
+
+  /* faq */
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 4px 18px; margin-bottom: 12px; }
+  summary { cursor: pointer; font-weight: 700; padding: 14px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--accent); font-weight: 900; font-size: 20px; }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--muted); font-size: 14.5px; margin: 0 0 16px; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; margin-top: 30px; }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; color: var(--muted); font-size: 13px; }
+  .foot a { color: var(--muted); text-decoration: none; margin-left: 16px; }
+  .foot a:hover { color: var(--ink); }
+
+  @media (max-width: 820px) {
+    .hero { grid-template-columns: 1fr; gap: 30px; padding: 44px 0 32px; }
+    .cols-3, .cols-2, .form-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <span class="logo">L</span>
+      <span><b>Lokale Sichtbarkeit &amp; Termine</b><span>Google-Profil zum Selbermachen</span></span>
+    </a>
+    <a class="btn" href="#audit">Gratis-Audit anfordern</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Kostenlos &amp; unverbindlich</div>
+      <h1>Verlierst du Kunden an die <span class="mark">Konkurrenz, die nur sichtbarer ist?</span></h1>
+      <p class="lead">Die meisten lokalen Betriebe sind besser als ihr Google-Auftritt vermuten lässt. Ich schaue mir dein Google-Unternehmensprofil an und zeige dir in einem kostenlosen Audit die 3 konkreten Stellen, an denen du gerade Termine liegen lässt.</p>
+      <div class="cta-row">
+        <a class="btn" href="#audit">Jetzt Gratis-Audit anfordern</a>
+        <a class="btn btn-ghost" href="#dabei">Was drin ist</a>
+      </div>
+      <div class="assure">
+        <span><b>0&nbsp;€</b>&nbsp;kostenlos</span>
+        <span>Ergebnis in <b>48&nbsp;Stunden</b></span>
+        <span>keine Agentur, kein Abo</span>
+      </div>
+    </div>
+
+    <div class="serp" aria-hidden="true">
+      <div class="serp-top"><span class="dot">◎</span> friseur in meiner nähe</div>
+      <div class="row">
+        <div class="rank">1</div>
+        <div class="rmeta"><b>Salon Nummer 1</b><small>vollständiges Profil · 214 Bewertungen</small><div class="stars">★★★★★</div></div>
+      </div>
+      <div class="row">
+        <div class="rank">2</div>
+        <div class="rmeta"><b>Studio Zwei</b><small>Fotos aktuell · antwortet auf Reviews</small><div class="stars">★★★★☆</div></div>
+      </div>
+      <div class="row you">
+        <div class="rank">7</div>
+        <div class="rmeta"><b>Dein Betrieb</b><small>Profil unvollständig · Fotos fehlen</small><div class="stars" style="color:var(--muted)">★★★☆☆</div></div>
+      </div>
+      <div class="tagline">Gleiche Qualität, andere Sichtbarkeit. Genau das ändern wir.</div>
+    </div>
+  </div>
+
+  <section id="dabei">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kick">Das Problem</span>
+        <h2>Kunden suchen bei Google — und finden zuerst den, der oben steht</h2>
+        <p>Nicht den besten Betrieb, sondern den sichtbarsten. Wer bei „…in meiner Nähe" nicht in den ersten Treffern auftaucht, existiert für den Kunden im Moment der Entscheidung nicht.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card"><div class="n">1</div><h3>Unvollständiges Profil</h3><p>Fehlende Kategorien, Öffnungszeiten oder Leistungen — Google kann dich schlechter einordnen und zeigt dich seltener.</p></div>
+        <div class="card"><div class="n">2</div><h3>Keine aktuellen Fotos</h3><p>Profile mit frischen Bildern bekommen mehr Klicks und Anrufe. Leere Galerien wirken geschlossen.</p></div>
+        <div class="card"><div class="n">3</div><h3>Bewertungen ohne Antwort</h3><p>Wer nicht auf Rezensionen reagiert, verschenkt Vertrauen — und ein Ranking-Signal, das Google mitzählt.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="inhalt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kick">Der Gratis-Audit</span>
+        <h2>Das schaue ich mir für dich an</h2>
+        <p>Ein ehrlicher Check deines Profils — kein Verkaufsgespräch, sondern eine konkrete Liste, was du selbst umsetzen kannst.</p>
+      </div>
+      <ul class="checks">
+        <li><span class="ic">✓</span><div><b>Profil-Vollständigkeit</b><small>Kategorien, Leistungen, Öffnungszeiten, Kontaktwege — alles, was Google zum Einordnen braucht.</small></div></li>
+        <li><span class="ic">✓</span><div><b>Fotos &amp; erster Eindruck</b><small>Was ein Kunde in den ersten 2 Sekunden sieht — und ob es zum Klick führt.</small></div></li>
+        <li><span class="ic">✓</span><div><b>Bewertungen &amp; Antworten</b><small>Menge, Aktualität und ob du das Bewertungs-Signal überhaupt nutzt.</small></div></li>
+        <li><span class="ic">✓</span><div><b>Keywords in der Beschreibung</b><small>Ob dein Profil die Wörter enthält, nach denen deine Kunden wirklich suchen.</small></div></li>
+        <li><span class="ic">✓</span><div><b>Daten-Konsistenz (NAP)</b><small>Name, Adresse, Telefon — überall identisch? Widersprüche kosten Ranking.</small></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ablauf">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kick">So läuft's</span>
+        <h2>In 3 Schritten zum Ergebnis</h2>
+      </div>
+      <div class="grid cols-3">
+        <div class="card"><div class="n">01</div><h3>Formular ausfüllen</h3><p>Name, Betrieb und Link zu deinem Google-Profil. Dauert unter 2 Minuten.</p></div>
+        <div class="card"><div class="n">02</div><h3>Audit in 48&nbsp;Stunden</h3><p>Du bekommst deine konkrete Stellschrauben-Liste — verständlich, ohne Fachchinesisch.</p></div>
+        <div class="card"><div class="n">03</div><h3>Selbst umsetzen</h3><p>Jeder Punkt ist zum Nachmachen. Wenn du Hilfe willst, sagst du Bescheid — musst du aber nicht.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="audit">
+    <div class="wrap">
+      <div class="form-sec">
+        <div class="sec-head" style="margin-bottom:22px">
+          <span class="kick">Kostenlos anfordern</span>
+          <h2>Dein Gratis Google-Profil-Audit</h2>
+          <p>Fülle das Formular aus — der Rest kommt per E-Mail. Unverbindlich, keine Kosten.</p>
+        </div>
+        <form id="auditForm" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Dein Name <span class="req">*</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" required placeholder="Max Mustermann">
+            </div>
+            <div class="field">
+              <label for="betrieb">Name des Betriebs <span class="req">*</span></label>
+              <input id="betrieb" name="betrieb" type="text" required placeholder="Salon / Praxis / Werkstatt …">
+            </div>
+            <div class="field">
+              <label for="email">E-Mail <span class="req">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="du@betrieb.de">
+            </div>
+            <div class="field">
+              <label for="branche">Branche</label>
+              <select id="branche" name="branche">
+                <option value="">Bitte wählen …</option>
+                <option>Friseur / Kosmetik</option>
+                <option>Arzt / Praxis / Therapie</option>
+                <option>Handwerk / Bau</option>
+                <option>Gastronomie / Café</option>
+                <option>Fitness / Studio</option>
+                <option>Sonstige Dienstleistung</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="profil">Link zu deinem Google-Profil <span class="req">*</span></label>
+              <input id="profil" name="profil" type="text" required placeholder="google.com/… oder einfach dein Firmenname + Ort">
+            </div>
+            <div class="field full">
+              <label for="ziel">Was möchtest du erreichen? <small style="font-weight:400;color:var(--muted)">(optional)</small></label>
+              <textarea id="ziel" name="ziel" placeholder="z. B. mehr Anrufe, mehr Termine, bei „… in meiner Nähe" gefunden werden"></textarea>
+            </div>
+          </div>
+          <div class="form-foot">
+            <button class="btn" type="submit">Gratis-Audit anfordern</button>
+            <span class="form-note">Mit dem Absenden stimmst du der Verarbeitung deiner Angaben zur Bearbeitung der Anfrage zu. Details in der <a href="datenschutz.html" style="color:var(--muted)">Datenschutzerklärung</a>.</span>
+          </div>
+          <div class="ok-msg" id="okMsg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kick">Häufige Fragen</span>
+        <h2>Kurz &amp; ehrlich</h2>
+      </div>
+      <details><summary>Ist das wirklich kostenlos?</summary><p>Ja. Der Audit kostet nichts und verpflichtet zu nichts. Du bekommst eine konkrete Liste, die du selbst umsetzen kannst.</p></details>
+      <details><summary>Muss ich danach etwas buchen?</summary><p>Nein. Der ganze Kanal dreht sich ums Selbermachen. Wenn du irgendwann Unterstützung willst, kannst du fragen — aber der Audit steht für sich.</p></details>
+      <details><summary>Wie schnell bekomme ich das Ergebnis?</summary><p>In der Regel innerhalb von 48 Stunden nach deiner Anfrage per E-Mail.</p></details>
+      <details><summary>Ich kenne meinen Profil-Link nicht — geht das trotzdem?</summary><p>Ja. Schreib einfach Firmenname und Ort ins Link-Feld, ich finde dein Profil darüber.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="yr"></span> Lokale Sichtbarkeit &amp; Termine · <span class="placeholder">[DEIN NAME / BETRIEB]</span></div>
+    <div>
+      <a href="index.html">Startseite</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ------------------------------------------------------------------
+     FORMULAR-VERSAND
+     Standard: öffnet eine vorausgefüllte E-Mail an deine Adresse
+     (funktioniert ohne Server / Backend).
+     -> Trag unten bei EMPFAENGER deine echte E-Mail ein.
+
+     Willst du die Anfragen automatisch sammeln statt per Mail?
+     Dann ersetze diese mailto-Logik durch dein Formular-Tool
+     (z. B. Formspree / GoDaddy-Formular): setze am <form> ein
+     action="DEINE-URL" method="POST" und lösche den e.preventDefault-Block.
+  ------------------------------------------------------------------ */
+  var EMPFAENGER = "DEINE-EMAIL@BEISPIEL.DE"; // <-- HIER deine E-Mail eintragen
+
+  var form = document.getElementById('auditForm');
+  var okMsg = document.getElementById('okMsg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var required = ['name', 'betrieb', 'email', 'profil'];
+    for (var i = 0; i < required.length; i++) {
+      var el = document.getElementById(required[i]);
+      if (!el.value.trim()) { el.focus(); return; }
+    }
+    var email = document.getElementById('email');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.focus(); return; }
+
+    var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+    var subject = "Gratis-Audit Anfrage – " + v('betrieb');
+    var body =
+      "Name: " + v('name') + "\n" +
+      "Betrieb: " + v('betrieb') + "\n" +
+      "E-Mail: " + v('email') + "\n" +
+      "Branche: " + (v('branche') || '-') + "\n" +
+      "Google-Profil: " + v('profil') + "\n" +
+      "Ziel: " + (v('ziel') || '-') + "\n";
+
+    window.location.href = "mailto:" + EMPFAENGER +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    okMsg.textContent = "Fast fertig — dein E-Mail-Programm öffnet sich mit der vorausgefüllten Anfrage. Nur noch auf Senden tippen. Falls sich nichts öffnet, schreib direkt an " + EMPFAENGER + ".";
+    okMsg.classList.add('show');
+    form.reset();
+  });
+</script>
+</body>
+</html>
