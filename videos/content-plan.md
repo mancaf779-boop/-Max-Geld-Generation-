@@ -19,6 +19,14 @@ Format: **Screencasts** (Bildschirm zeigen) — in dieser Nische das, was zieht.
 Upload-Texte. Es fehlt nur noch deine Bildschirmaufnahme. Aus jedem Hauptvideo
 lässt sich zusätzlich 1 Short schneiden (Hook-Abschnitt) → 6 Videos + 6 Shorts.
 
+**Zusätzlich (KI-Bild-Variante):** In jedem Paket liegt jetzt ein Ordner
+`produktion/` mit einem kompletten Paket aus der YouTube Video Production
+Engine — Topic-Report, durchgehender Visual-Stil, Upload-fertige Metadaten,
+Thumbnail-Konzepte und **Szene-für-Szene Bild-Prompts (Nano Banana)** + Motion-
+Prompts für Lang­video und Short. Damit lässt sich alternativ zum Screencast
+ein aufwändig gestaltetes, KI-bebildertes Video bauen. Erzählstimme wie gehabt:
+`de-DE-ConradNeural`.
+
 ## Warum diese Nische stark ist
 - Klarer Geschäftsnutzen → Zuschauer sind Unternehmer mit Budget.
 - Passt zum Namen „Max Geld Generation" (du hilfst Betrieben, Geld zu verdienen).

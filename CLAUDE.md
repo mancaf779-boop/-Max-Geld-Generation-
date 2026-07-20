@@ -2,6 +2,39 @@
 
 Guidance for AI assistants (and humans) working in this repository.
 
+## ⚠️ Session-Start-Regel (IMMER zuerst — vor jeder Arbeit)
+
+Bevor du in einer neuen Sitzung irgendetwas tust, **lies zuerst die gespeicherten
+MD-Steuerdateien** und arbeite nach ihnen — **nicht** frei drauflos. Das spart
+Tokens und hält alles konsistent.
+
+1. **Prompt-Bibliothek:** `.claude/skills/prompt-library/` (SKILL.md-Index +
+   die passende `prompts/NN-*.md`). Muster anwenden statt improvisieren.
+2. **Gespeicherte System-Prompts & Sammlungen unter `youtube-seo/`:**
+   - `kanal-analyse-systemprompt.md` — Kanal-Reverse-Engineering (liegt über den
+     vidIQ-Konkurrenz-Prompts 01 & 03)
+   - `referenz-channel-operating-system.md` — Operating-System-Vorlage
+   - `vidiq-prompts.md` — vidIQ-Research-Queue + Batch-Zuweisung (Ausführung nur
+     mit vidIQ-Credits)
+   - `wettbewerbsanalyse.md`, `keywords.md`, `kanal.md`, `video-metadaten.md`
+   - `branding/kanal-identitaet.md` + `branding/kanal-angebot.md` (Stimme/Positionierung)
+3. **Kein Eigenlauf:** keine unnötigen Tool-Aufrufe, keine Auto-Commits, keine
+   Subagenten ohne ausdrückliches Kommando des Nutzers. Erst lesen → dann auf die
+   Richtung des Nutzers warten. Der Nutzer sagt, wo es langgeht.
+4. **Konnektoren** wackeln in dieser Session öfter; nie behaupten, etwas sei
+   „erledigt", wenn ein Konnektor/Guthaben fehlt — ehrlich den Blocker nennen.
+
+> Grund: Der Nutzer hat diese Dateien bewusst als Steuerung angelegt, damit
+> keine Tokens verschwendet werden. Diese Regel hat Vorrang.
+
+## Ton & Antwortstil (Regel — hat Vorrang)
+
+- **Kein überheblicher, belehrender oder „komischer" Ton.** Nicht von oben herab,
+  nicht klugscheißen, keine ungefragten Bewertungen oder Belehrungen.
+- **Kurz und normal antworten** — auf den Punkt, wie unter Kollegen. Kein
+  Zuballern mit Bullet-Listen, Hedging-Floskeln („ehrlich gesagt" …) und Emoji.
+- Nur so viel erklären, wie gefragt ist. Der Nutzer entscheidet, wann er mehr will.
+
 ## Current state of the repository
 
 The project is a **Node.js (CommonJS) integration with the YouTube Data and

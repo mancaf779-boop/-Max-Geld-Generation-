@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:2560px;height:1440px;overflow:hidden;background:#0d1b2a;font-family:Arial,"DejaVu Sans",sans-serif}
+.stage{width:2560px;height:1440px;position:relative;
+  background:
+    radial-gradient(45% 60% at 50% 20%, rgba(230,57,70,.34), transparent 60%),
+    radial-gradient(40% 70% at 88% 90%, rgba(242,182,50,.14), transparent 60%),
+    radial-gradient(40% 70% at 10% 92%, rgba(230,57,70,.12), transparent 60%),
+    linear-gradient(160deg,#1b2c46 0%,#0d1b2a 70%)}
+.grid{position:absolute;inset:0;opacity:.05;
+  background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);
+  background-size:140px 140px}
+/* decorative motifs in the cropped side areas (outside safe zone) */
+.deco{position:absolute;opacity:.14}
+.d1{left:200px;top:250px}
+.d2{right:230px;top:220px}
+.d3{right:340px;bottom:230px}
+.d4{left:300px;bottom:250px}
+/* stacked 3-pack cards motif, far left & right */
+.pack{position:absolute;opacity:.16;display:flex;flex-direction:column;gap:14px}
+.pack .card{width:150px;height:42px;background:#fff;border-radius:9px;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.packL{left:150px;top:600px;transform:rotate(-8deg)}
+.packR{right:150px;bottom:560px;transform:rotate(8deg)}
+/* SAFE ZONE: centered ~1235x338, everything important inside */
+.safe{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:1500px;height:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.kick{color:#f2b632;font-weight:900;font-size:30px;letter-spacing:.26em;text-transform:uppercase}
+.badgerow{display:flex;align-items:center;gap:18px;margin:20px 0 6px}
+.stars{display:flex;gap:6px}
+.title{font-family:"Arial Black",Impact,sans-serif;font-weight:900;color:#fff;font-size:118px;line-height:.92;
+  letter-spacing:-.01em;margin:6px 0 0;text-shadow:0 8px 34px rgba(0,0,0,.5)}
+.title .hl{color:#ff5a67}
+.sub{color:#c6d2e4;font-size:36px;margin-top:22px;font-weight:600}
+.pill{margin-top:24px;display:inline-flex;align-items:center;gap:14px;background:#e63946;color:#fff;
+  font-weight:900;font-size:29px;padding:14px 30px;border-radius:999px;box-shadow:0 10px 30px rgba(230,57,70,.35)}
+</style></head><body>
+<div class="stage">
+  <div class="grid"></div>
+
+  <!-- side decorations (get cropped on small screens; safe to lose) -->
+  <svg class="deco d1" width="300" height="300" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12A7 7 0 0 0 5 10c0 5.4 7 12 7 12z" fill="#e63946"/><circle cx="12" cy="10" r="2.6" fill="#0d1b2a"/></svg>
+  <svg class="deco d2" width="250" height="250" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 18l-6 3.4 1.4-6.8L2.3 9.9l6.9-.8z" fill="#f2b632"/></svg>
+  <svg class="deco d3" width="230" height="230" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12A7 7 0 0 0 5 10c0 5.4 7 12 7 12z" fill="#f2b632"/><circle cx="12" cy="10" r="2.6" fill="#0d1b2a"/></svg>
+  <svg class="deco d4" width="210" height="210" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 18l-6 3.4 1.4-6.8L2.3 9.9l6.9-.8z" fill="#e63946"/></svg>
+  <div class="pack packL"><div class="card"></div><div class="card"></div><div class="card"></div></div>
+  <div class="pack packR"><div class="card"></div><div class="card"></div><div class="card"></div></div>
+
+  <!-- SAFE ZONE -->
+  <div class="safe">
+    <div class="kick">Google-Profil · Lokales SEO · Mehr Termine</div>
+    <div class="badgerow">
+      <svg width="52" height="52" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12A7 7 0 0 0 5 10c0 5.4 7 12 7 12z" fill="#e63946"/><circle cx="12" cy="10" r="2.7" fill="#fff"/></svg>
+      <div class="stars">
+        <svg width="40" height="40" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 18l-6 3.4 1.4-6.8L2.3 9.9l6.9-.8z" fill="#f2b632"/></svg>
+        <svg width="40" height="40" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 18l-6 3.4 1.4-6.8L2.3 9.9l6.9-.8z" fill="#f2b632"/></svg>
+        <svg width="40" height="40" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 18l-6 3.4 1.4-6.8L2.3 9.9l6.9-.8z" fill="#f2b632"/></svg>
+        <svg width="40" height="40" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 18l-6 3.4 1.4-6.8L2.3 9.9l6.9-.8z" fill="#f2b632"/></svg>
+        <svg width="40" height="40" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 18l-6 3.4 1.4-6.8L2.3 9.9l6.9-.8z" fill="#f2b632"/></svg>
+      </div>
+    </div>
+    <div class="title">LOKALE SICHTBARKEIT<br><span class="hl">&amp; TERMINE</span></div>
+    <div class="sub">Bei Google gefunden werden — und mehr Termine für dein lokales Geschäft</div>
+    <div class="pill">▶ Jede Woche neue Tipps · @francescomanca5183</div>
+  </div>
+</div>
+</body></html>
