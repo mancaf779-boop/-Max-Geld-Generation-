@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
-# smoke.sh — prüft das YouTube-Analytics-CLI im jeweils vorliegenden
+# self-test.sh — prüft das YouTube-Analytics-CLI im jeweils vorliegenden
 # Credential-Zustand. Blockiert NIE: das CLI läuft mit geschlossenem stdin
 # und Timeout, und es wird auf die konkreten Fehlermeldungen geprüft
-# (nicht nur auf Exit != 0).
+# (nicht nur auf Exit != 0). Erwartetes Ende: SMOKE OK.
 #
-# Aufruf (aus dem Repo-Root!):
-#   .claude/skills/run-max-geld-generation/smoke.sh
+# Aufruf (bevorzugt über main.sh --self-test):
+#   .claude/skills/youtube-channel-report/scripts/self-test.sh
 set -euo pipefail
-cd "$(dirname "$0")/../../.."   # Repo-Root; die Skripte nutzen relative Pfade!
+# Skript liegt unter <repo>/.claude/skills/<skill>/scripts/ → Repo-Root = vier Ebenen höher.
+SELF_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SELF_DIR/../../../.."   # Repo-Root; die Skripte nutzen relative Pfade!
 
 [ -d node_modules ] || npm install --no-audit --no-fund
 
