@@ -1,4 +1,4 @@
-# Wettbewerbsanalyse — Kanal „Lokale Sichtbarkeit & Termine"
+# Wettbewerbsanalyse — Kanal „Lokale Sichtbarkeit und Termine optimieren"
 
 > **Erstellt mit Prompt 13 (Competitive Analysis Framework)** aus der
 > Prompt-Bibliothek. **Rahmenbasiert, ohne Live-Marktdaten.** Es lagen keine
@@ -13,7 +13,7 @@
 
 ## Ausgangslage (unser Kanal)
 
-- **Produkt/Kanal:** „Lokale Sichtbarkeit & Termine" (@francescomanca5183) —
+- **Produkt/Kanal:** „Lokale Sichtbarkeit und Termine optimieren" (@francescomanca5183) —
   Schritt-für-Schritt-Screencasts, wie kleine Vor-Ort-Betriebe ihr
   Google-Unternehmensprofil selbst optimieren und aus Klicks Termine machen.
 - **Zielmarkt:** Inhaber:innen kleiner lokaler Betriebe im deutschsprachigen

@@ -7,7 +7,7 @@ secondary_keywords:
   - "Google Maps Ranking"
   - "mehr Termine bekommen"
   - "lokale Sichtbarkeit"
-author: "Lokale Sichtbarkeit & Termine"
+author: "Lokale Sichtbarkeit und Termine optimieren"
 ---
 
 <!--
@@ -140,7 +140,7 @@ Das Ganze dauert keine halbe Stunde und bringt dir messbar mehr Anfragen aus dei
 
 ### Willst du jeden Schritt sehen, statt ihn nur zu lesen?
 
-Auf meinem YouTube-Kanal **„Lokale Sichtbarkeit & Termine"** zeige ich dir genau diese Optimierung direkt am Bildschirm – Klick für Klick zum Nachmachen. Sieh dir das komplette Screencast-Video „Google-Unternehmensprofil optimieren: So kommst du bei der lokalen Suche ganz oben" an und **abonniere den Kanal**, damit du jede Woche einen neuen, sofort umsetzbaren Tipp für mehr lokale Sichtbarkeit und mehr Termine bekommst:
+Auf meinem YouTube-Kanal **„Lokale Sichtbarkeit und Termine optimieren"** zeige ich dir genau diese Optimierung direkt am Bildschirm – Klick für Klick zum Nachmachen. Sieh dir das komplette Screencast-Video „Google-Unternehmensprofil optimieren: So kommst du bei der lokalen Suche ganz oben" an und **abonniere den Kanal**, damit du jede Woche einen neuen, sofort umsetzbaren Tipp für mehr lokale Sichtbarkeit und mehr Termine bekommst:
 
 👉 **[Zum YouTube-Kanal & Video abonnieren](https://www.youtube.com/@francescomanca5183?sub_confirmation=1)**
 

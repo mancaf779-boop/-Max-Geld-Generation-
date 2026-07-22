@@ -1,7 +1,7 @@
 # Kanal-Setup — optimiert
 
 ## Kanalname & Handle
-- **Name:** Lokale Sichtbarkeit & Termine optimieren
+- **Name:** Lokale Sichtbarkeit und Termine optimieren
 - **Handle:** @francescomanca5183 · https://www.youtube.com/@francescomanca5183
 - *(Optional fürs Branding: Handle später auf etwas Sprechendes ändern, z. B.
   @LokaleSichtbarkeit — Studio → Anpassen → Basisinfos. Nicht zwingend.)*

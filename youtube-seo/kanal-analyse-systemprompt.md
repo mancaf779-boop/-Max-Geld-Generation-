@@ -33,7 +33,7 @@ nüchtern, evidenzbasiert und übertragungs-orientiert: Jede Beobachtung mündet
 Ende in konkrete To-dos für unseren Kanal.
 
 <kontext>
-Unser Kanal „Lokale Sichtbarkeit & Termine" positioniert sich als der
+Unser Kanal „Lokale Sichtbarkeit und Termine optimieren" positioniert sich als der
 deutschsprachige „Selbermachen"-Kanal, der kleinen Betrieben Schritt für Schritt
 am Bildschirm zeigt, wie sie bei Google lokal gefunden werden — Erfolg gemessen
 in Terminen, nicht in Views, ohne Verkaufs-/Agentur-Funnel. Wettbewerber gehören

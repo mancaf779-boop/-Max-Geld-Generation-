@@ -1,4 +1,4 @@
-# YouTube-Optimierung — Kanal „Lokale Sichtbarkeit & Termine optimieren"
+# YouTube-Optimierung — Kanal „Lokale Sichtbarkeit und Termine optimieren"
 
 Alles, um das Maximum aus dem Kanal zu holen: Kanal-Setup, Keywords,
 optimierte Metadaten für jedes Video, Playlists, Rhythmus. Erstellt nach der

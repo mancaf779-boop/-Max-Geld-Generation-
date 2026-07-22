@@ -1,4 +1,4 @@
-# Content-Plan — Kanal „Lokale Sichtbarkeit & Termine optimieren"
+# Content-Plan — Kanal „Lokale Sichtbarkeit und Termine optimieren"
 
 Nische: lokalen Unternehmen (Friseure, Praxen, Handwerker, Gastro, Studios…)
 helfen, bei Google gefunden zu werden und daraus mehr Termine/Kunden zu machen.

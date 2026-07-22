@@ -7,8 +7,8 @@
 
 # Entscheidung: Produktionsweg für die Videos
 
-**Zu entscheiden:** Wie werden die Videos des Kanals „Lokale Sichtbarkeit &
-Termine" (@francescomanca5183) produziert?
+**Zu entscheiden:** Wie werden die Videos des Kanals „Lokale Sichtbarkeit und
+Termine optimieren" (@francescomanca5183) produziert?
 
 **Optionen:**
 

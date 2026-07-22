@@ -1,4 +1,4 @@
-# LinkedIn-Posts — Kanal „Lokale Sichtbarkeit & Termine"
+# LinkedIn-Posts — Kanal „Lokale Sichtbarkeit und Termine optimieren"
 
 > Erstellt mit **Prompt 10 (LinkedIn Post Writer)** aus der Prompt-Bibliothek
 > (`.claude/skills/prompt-library/prompts/10-linkedin-post-writer.md`).

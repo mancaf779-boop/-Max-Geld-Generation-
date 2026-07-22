@@ -1,4 +1,4 @@
-# Copy-Vorschlag — Landingpage „Lokale Sichtbarkeit & Termine"
+# Copy-Vorschlag — Landingpage „Lokale Sichtbarkeit und Termine optimieren"
 
 > **Status:** Vorschlag zur Review. Nicht in `website/index.html` integriert — der
 > Supervisor übernimmt die Integration nach Freigabe.
@@ -17,7 +17,7 @@
 
 ## Profil-Felder (Grundlage der Copy)
 
-- **Produkt/Service:** YouTube-Kanal „Lokale Sichtbarkeit & Termine" (@francescomanca5183)
+- **Produkt/Service:** YouTube-Kanal „Lokale Sichtbarkeit und Termine optimieren" (@francescomanca5183)
 - **Zielgruppe:** Inhaber:innen kleiner lokaler Betriebe — Friseure, Praxen,
   Handwerker, Gastro, Studios, Dienstleister
 - **Kern-Schmerzpunkt:** Der Betrieb ist gut, wird bei Google aber kaum gefunden —

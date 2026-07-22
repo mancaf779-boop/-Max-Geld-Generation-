@@ -27,7 +27,7 @@ werden muss einer davon **zusätzlich** zu **1.000 Abonnenten**:
 
 ## Kontext (aus den Repo-Unterlagen)
 
-- Kanal „Lokale Sichtbarkeit & Termine" (@francescomanca5183). Nische:
+- Kanal „Lokale Sichtbarkeit und Termine optimieren" (@francescomanca5183). Nische:
   Google-Unternehmensprofil & lokale Sichtbarkeit **zum Selbermachen** für kleine
   Vor-Ort-Betriebe (Friseure, Praxen, Handwerker, Gastro, Studios).
 - **6 fertige Video-Pakete** (Google-Profil, 5 Fehler, Bewertungen, Klick→Termin,
