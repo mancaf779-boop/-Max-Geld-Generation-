@@ -15,7 +15,7 @@
 
 ## Profil-Felder (Grundlage der Beschreibung)
 
-- **Produkt/Angebot:** YouTube-Kanal „Lokale Sichtbarkeit & Termine"
+- **Produkt/Angebot:** YouTube-Kanal „Lokale Sichtbarkeit und Termine optimieren"
   (@francescomanca5183) — kostenlose Schritt-für-Schritt-Anleitungen
 - **Kategorie:** Lokales SEO / Google-Unternehmensprofil — zum Selbermachen
 - **Zielkäufer (Zuschauer):** Inhaber:innen kleiner lokaler Betriebe — Friseure,
@@ -56,7 +56,7 @@
 ## Version 1 — Standard (feature-/SEO-orientiert)
 
 Mehr Termine, weil dich in deiner Stadt endlich die richtigen Leute finden:
-Genau dahin bringt dich dieser Kanal. „Lokale Sichtbarkeit & Termine" zeigt
+Genau dahin bringt dich dieser Kanal. „Lokale Sichtbarkeit und Termine optimieren" zeigt
 kleinen Betrieben — Friseuren, Praxen, Handwerkern, Gastro und Dienstleistern —
 Woche für Woche, wie sie ihr Google-Unternehmensprofil selbst optimieren, beim
 lokalen SEO nach oben kommen und aus Klicks echte Termine machen. Jede Anleitung

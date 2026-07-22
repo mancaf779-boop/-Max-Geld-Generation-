@@ -6,7 +6,7 @@ Website, Social-Bios und als Kanal-Trailer-Text.
 
 ## Angenommenes Profil
 
-- **Marke / Kanal:** „Lokale Sichtbarkeit & Termine" · Handle **@francescomanca5183**
+- **Marke / Kanal:** „Lokale Sichtbarkeit und Termine optimieren" · Handle **@francescomanca5183**
 - **Was:** Praktische Anleitungen, wie lokale Betriebe bei Google gefunden werden
   und daraus mehr Termine machen (Google-Unternehmensprofil, lokales SEO).
 - **Zielgruppe:** Inhaber:innen kleiner lokaler Betriebe — Friseure, Praxen,

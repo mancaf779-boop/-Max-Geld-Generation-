@@ -1,4 +1,4 @@
-# Kanal-Branding — Lokale Sichtbarkeit & Termine
+# Kanal-Branding — Lokale Sichtbarkeit und Termine optimieren
 
 Marken-Assets für den YouTube-Kanal, im selben Look wie Website und Videos
 (Navy #0d1b2a · Rot #e63946 · Gold #f2b632 · Pin-Motiv).
