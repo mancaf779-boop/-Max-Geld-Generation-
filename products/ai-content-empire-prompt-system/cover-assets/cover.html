@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: "Bricolage";
+    src: url("fonts/BricolageGrotesque-Bold.ttf") format("truetype");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Work Sans";
+    src: url("fonts/WorkSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Work Sans";
+    src: url("fonts/WorkSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("fonts/JetBrainsMono-Regular.ttf") format("truetype");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("fonts/JetBrainsMono-Bold.ttf") format("truetype");
+    font-weight: 700;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1600px;
+    height: 900px;
+    overflow: hidden;
+    background: #0a0b10;
+    font-family: "Work Sans", sans-serif;
+  }
+
+  .stage {
+    position: relative;
+    width: 1600px;
+    height: 900px;
+  }
+
+  /* --- Hintergrund-Textur: sehr feines Grid + ruhige Glow-Zonen --- */
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image:
+      linear-gradient(#fff 1px, transparent 1px),
+      linear-gradient(90deg, #fff 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .glow-a {
+    position: absolute;
+    left: 50%;
+    top: 560px;
+    width: 1400px;
+    height: 520px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, rgba(124,111,255,0.16), transparent 72%);
+  }
+  .glow-b {
+    position: absolute;
+    right: -420px;
+    top: -420px;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(closest-side, rgba(34,211,238,0.07), transparent 72%);
+  }
+  .glow-c {
+    position: absolute;
+    left: -200px;
+    bottom: -260px;
+    width: 620px;
+    height: 620px;
+    background: radial-gradient(closest-side, rgba(124,111,255,0.08), transparent 70%);
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 240px 40px rgba(0,0,0,0.55);
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+  }
+
+  .kicker {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    font-size: 21px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #9d90ff, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .title {
+    margin-top: 24px;
+    font-family: "Bricolage", sans-serif;
+    font-weight: 700;
+    color: #f5f6fb;
+    font-size: 90px;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+
+  .subtitle {
+    margin-top: 24px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: #a9afc4;
+    text-align: center;
+    max-width: 940px;
+    line-height: 1.4;
+  }
+
+  .chain { margin-top: 46px; }
+
+  .node-label {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.1em;
+    fill: #c7cbe0;
+    text-transform: uppercase;
+  }
+  .node-index {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    font-size: 28px;
+    fill: #f5f6fb;
+  }
+  .loop-label {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    fill: #767fa0;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-grid"></div>
+  <div class="glow-b"></div>
+  <div class="glow-c"></div>
+  <div class="glow-a"></div>
+
+  <div class="content">
+    <div class="kicker">Core Prompt System · v1</div>
+    <h1 class="title">Ein System,<br>keine losen Prompts</h1>
+    <p class="subtitle">5 KI-Agenten für deine komplette Video-Pipeline —
+      von der ersten Idee bis zur Auswertung nach dem Upload.</p>
+
+    <svg class="chain" width="1320" height="300" viewBox="0 0 1320 300">
+      <defs>
+        <linearGradient id="nodeGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#8b7cff"/>
+          <stop offset="1" stop-color="#22d3ee"/>
+        </linearGradient>
+        <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#7c72d9"/>
+          <stop offset="1" stop-color="#5aa8c9"/>
+        </linearGradient>
+        <marker id="arrowSolid" viewBox="0 0 10 10" refX="8" refY="5"
+                markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#8b93b8"/>
+        </marker>
+        <marker id="arrowLoop" viewBox="0 0 10 10" refX="8" refY="5"
+                markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#4a5170"/>
+        </marker>
+        <filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="12"/>
+        </filter>
+      </defs>
+
+      <!-- Verbindungslinien zwischen den 5 Knoten (Radius 55, Zentren bei
+           x = 170, 415, 660, 905, 1150 / y = 80) -->
+      <line x1="225" y1="80" x2="360" y2="80" stroke="url(#lineGrad)" stroke-width="3" marker-end="url(#arrowSolid)"/>
+      <line x1="470" y1="80" x2="605" y2="80" stroke="url(#lineGrad)" stroke-width="3" marker-end="url(#arrowSolid)"/>
+      <line x1="715" y1="80" x2="850" y2="80" stroke="url(#lineGrad)" stroke-width="3" marker-end="url(#arrowSolid)"/>
+      <line x1="960" y1="80" x2="1095" y2="80" stroke="url(#lineGrad)" stroke-width="3" marker-end="url(#arrowSolid)"/>
+
+      <!-- Rückkopplungs-Bogen: vom letzten Knoten zurück zum ersten -->
+      <path d="M 1150 140 C 1150 250, 170 250, 170 140"
+            fill="none" stroke="#4a5170" stroke-width="2.5"
+            stroke-dasharray="2 9" stroke-linecap="round"
+            marker-end="url(#arrowLoop)"/>
+      <text x="660" y="277" text-anchor="middle" class="loop-label">lernt aus jedem veröffentlichten Video</text>
+
+      <!-- Knoten 1 – Research -->
+      <circle cx="170" cy="80" r="46" fill="url(#nodeGrad)" opacity="0.30" filter="url(#nodeGlow)"/>
+      <circle cx="170" cy="80" r="55" fill="#12131c" stroke="url(#nodeGrad)" stroke-width="2.5"/>
+      <text x="170" y="92" text-anchor="middle" class="node-index">01</text>
+      <text x="170" y="168" text-anchor="middle" class="node-label">Research</text>
+
+      <!-- Knoten 2 – Script -->
+      <circle cx="415" cy="80" r="46" fill="url(#nodeGrad)" opacity="0.30" filter="url(#nodeGlow)"/>
+      <circle cx="415" cy="80" r="55" fill="#12131c" stroke="url(#nodeGrad)" stroke-width="2.5"/>
+      <text x="415" y="92" text-anchor="middle" class="node-index">02</text>
+      <text x="415" y="168" text-anchor="middle" class="node-label">Script</text>
+
+      <!-- Knoten 3 – Thumbnail -->
+      <circle cx="660" cy="80" r="46" fill="url(#nodeGrad)" opacity="0.30" filter="url(#nodeGlow)"/>
+      <circle cx="660" cy="80" r="55" fill="#12131c" stroke="url(#nodeGrad)" stroke-width="2.5"/>
+      <text x="660" y="92" text-anchor="middle" class="node-index">03</text>
+      <text x="660" y="168" text-anchor="middle" class="node-label">Thumbnail</text>
+
+      <!-- Knoten 4 – SEO -->
+      <circle cx="905" cy="80" r="46" fill="url(#nodeGrad)" opacity="0.30" filter="url(#nodeGlow)"/>
+      <circle cx="905" cy="80" r="55" fill="#12131c" stroke="url(#nodeGrad)" stroke-width="2.5"/>
+      <text x="905" y="92" text-anchor="middle" class="node-index">04</text>
+      <text x="905" y="168" text-anchor="middle" class="node-label">SEO</text>
+
+      <!-- Knoten 5 – Analytics -->
+      <circle cx="1150" cy="80" r="46" fill="url(#nodeGrad)" opacity="0.30" filter="url(#nodeGlow)"/>
+      <circle cx="1150" cy="80" r="55" fill="#12131c" stroke="url(#nodeGrad)" stroke-width="2.5"/>
+      <text x="1150" y="92" text-anchor="middle" class="node-index">05</text>
+      <text x="1150" y="168" text-anchor="middle" class="node-label">Analytics</text>
+    </svg>
+  </div>
+
+  <div class="vignette"></div>
+</div>
+</body>
+</html>
