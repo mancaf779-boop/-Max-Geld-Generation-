@@ -6,7 +6,10 @@
 
 ## Hook/Titel
 
-[To be written]
+# Ein System, keine losen Prompts
+
+5 fertige KI-Agenten für deine komplette Video-Pipeline — von der ersten
+Idee bis zur Auswertung nach dem Upload.
 
 ## Problem
 
@@ -27,9 +30,11 @@ bei Zeitdruck kippt.
 
 ## Lösung / Was du bekommst
 
-Das Core Prompt System v1 ist kein Sammelsurium loser Prompts, sondern ein
-komplettes 5-Agenten-System für deine Video-Pipeline — von der ersten Idee
-bis zur Auswertung nach dem Upload.
+Das Core Prompt System v1 ist ein Prompt-System, kein Plug-and-play-Tool:
+fünf aufeinander abgestimmte Master-Prompts für deine komplette
+Video-Pipeline — von der ersten Idee bis zur Auswertung nach dem Upload. Du
+führst die Kette selbst: standardmäßig per Copy-Paste zwischen den Agenten,
+bei Bedarf automatisiert in n8n.
 
 **5 fertige Master-Prompts, sofort einsatzbereit:**
 
@@ -42,9 +47,25 @@ bis zur Auswertung nach dem Upload.
 - 📊 Analytics Agent — wertet CTR, Retention, Kommentare aus und leitet
   konkrete Verbesserungen ab
 
-Jeder Prompt übergibt sein Ergebnis strukturiert (JSON) an den nächsten
-Agenten — die Kette funktioniert manuell per Copy-Paste zwischen Chats genauso
-wie automatisiert in n8n oder einem eigenen Agenten-Backend.
+Jeder Prompt übergibt sein Ergebnis strukturiert weiter — kein Fließtext zum
+Interpretieren, sondern ein JSON-Block, den du 1:1 in den nächsten Agenten
+einfügst. So sieht die Übergabe vom Research an den Script Agent aus:
+
+```json
+{
+  "titel_idee": "5 Steuerfehler, die dich 2026 bares Geld kosten",
+  "zielgruppe": "Berufseinsteiger, erste Steuererklärung",
+  "kernproblem": "Angst, beim Finanzamt etwas falsch zu machen",
+  "versprechen": "5 konkrete Fehler + wie du sie vermeidest",
+  "keywords": ["steuererklärung berufseinsteiger", "steuerfehler vermeiden"],
+  "wettbewerbs_learning": "Große Finanz-Kanäle bleiben abstrakt, konkrete Fehlerliste ist die Lücke",
+  "typ": "evergreen"
+}
+```
+
+Genau dieser Block landet als Eingabe im Script Agent — die Ergebnisse
+bleiben aufeinander abgestimmt, egal ob du manuell weiterreichst oder in
+n8n verkettest.
 
 Und der Kreislauf schließt sich: Der Analytics Agent gibt seine Erkenntnisse
 zurück an Research und Script — dein System lernt aus jedem Video, das du
@@ -59,7 +80,7 @@ YouTube long-form, Shorts, TikTok und Reels gleichermaßen.
 **Ist für dich, wenn:**
 
 - du YouTube/Social Media neben- oder hauptberuflich bespielst und endlich
-  Routine in deine Pipeline bringen willst (auch als kleines Redaktionsteam)
+  Routine in deine Pipeline bringen willst
 - du schon mit ChatGPT/Claude arbeitest, aber ohne System — und die Zeit, die
   du in KI steckst, planbar nutzen willst statt jedes Mal neu zu improvisieren
 - du bereit bist, die Ergebnisse selbst zu redigieren und mit eigenem Wissen
@@ -78,11 +99,18 @@ YouTube long-form, Shorts, TikTok und Reels gleichermaßen.
 
 Enthalten:
 
-- 5 Master-Prompts als PDF-Guide (Research, Script, Thumbnail, SEO,
-  Analytics), jeweils copy-paste-fertig
+- 5 einzelne PDF-Guides — ein Guide pro Agent (Research, Script, Thumbnail,
+  SEO, Analytics), jeweils copy-paste-fertig
 - 1 PDF-Kurzanleitung: wie du die Kette in Custom GPT, Claude Projects oder
   n8n einrichtest
 - Zugriff auf künftige Korrekturen/Feinschliff dieser Version (v1)
+
+Lizenz: für den persönlichen Gebrauch (ein Nutzer, ein Kanal). Für mehrere
+Personen oder Kanäle bitte mehrfach erwerben.
+
+Sofort nach Kauf als Download verfügbar. Mit dem Kauf bestätigst du den
+Verzicht auf dein 14-tägiges Widerrufsrecht, da der Zugriff auf die
+digitalen Inhalte sofort beginnt.
 
 Launch-Preis für v1. Erweiterungen (z. B. nischenspezifische Varianten,
 tiefere Tool-Integration) sind für spätere Versionen geplant und dann
@@ -122,3 +150,12 @@ eigene, separat erhältliche Version.
 **In welcher Sprache sind die Prompts?**
 Deutsch, mit Ausnahme des Bild-Prompts im Thumbnail Agent (bewusst
 Englisch, weil Bildmodelle darauf zuverlässiger reagieren).
+
+**Kann ich das im Team nutzen?**
+Der Kauf ist eine Einzel-Lizenz (ein Nutzer, ein Kanal). Für mehrere
+Personen oder Kanäle im selben Team bitte entsprechend mehrfach erwerben.
+
+**Kann ich den Kauf widerrufen, wenn es mir nicht gefällt?**
+Nein. Da der Zugriff auf die digitalen Inhalte sofort nach Kauf beginnt,
+bestätigst du beim Kauf den Verzicht auf dein gesetzliches
+14-tägiges Widerrufsrecht.
