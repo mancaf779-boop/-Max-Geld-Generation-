@@ -17,6 +17,9 @@ out/
 # ElevenLabs-Schlüssel (Secret)
 .elevenlabs.env
 
+# Gumroad-Access-Token (Secret)
+.gumroad.env
+
 # Fertige Videos/Audio unter videos/ (groß, reproduzierbar): nur Skripte/
 # Texte/Thumbnails versionieren, keine mp4/wav ins Git.
 videos/**/*.mp4
